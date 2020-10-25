@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 权重  */
+      /* .div1{
+          color: magenta;
+          font-size: 60px;
+      }
+      div{
+          color: red;
+      }
+        #test{
+            color: yellow;
+        } */
+        div{
+            color: green !important; 
+        }
+        .div1{
+            color: red;
+        }
+        .div2 div{
+            color: yellow;
+        }
+        /* !important 是最高的  *号是最低的 */
+        /* 权重值相等时，取最近的 */
+        /* 标签选择器1 < 类选择器10 < id选择器100 < 内敛选择器1000 */
+    </style>
+</head>
+<body>
+    <!-- <div class="div1" id="test"> hello world</div> -->
+    <div class="div2">
+        <div class="div1" id="test"> hello world</div>
+    </div>
+</body>
+</html>

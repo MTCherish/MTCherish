@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul:first-child{
+            color:red;
+        }
+        li:last-child{
+            color: yellow;
+        }
+        li:nth-child(3){
+            color: green;
+        } */
+        /* odd 为奇数 even 为偶数 */
+        /* li:nth-child(even){
+            color: blueviolet;
+        } */
+        /* 还可以用数学表达式，n是从0开始遍历，那就是可以是根据自己的想法写 */
+        li:nth-child(3n+1){
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+    </ul>
+</body>
+</html>

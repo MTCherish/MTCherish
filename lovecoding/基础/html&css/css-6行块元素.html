@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        margin: 0;
+      }
+      div{
+        width: 100px;
+        height: 100px;
+        background-color: greenyellow;
+        border: solid black 1px;
+        display: inline;/*行元素*/
+        display: inline-block;
+      }
+      /* 行元素 width 和 heigth 没用，根据内容撑开 */
+      span{
+        width: 100px;
+        height: 100px;
+        background-color: greenyellow;
+        border: solid black 1px;
+        margin: 20px;
+        display: block;/*块元素*/
+      }
+    </style>
+</head>
+<body>
+   <div>1</div><div>2</div>
+   <div>3</div>
+   <span>aa</span>
+   <span>b</span>
+   <span>c</span>
+   <img src="./image/img01.jpg" alt="">
+</body>
+</html>

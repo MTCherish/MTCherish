@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 0;
+            height: 0;
+            /* border: 5px solid black; */
+            /* rgba(0,0,0,0)和transparent 是等价的 */
+            border-left: 20px solid rgba(0,0,0,0);
+            border-right: 20px solid transparent;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid yellow;
+            opacity: 1;/*控制透明度  越大越深，越小越透明 0-1*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

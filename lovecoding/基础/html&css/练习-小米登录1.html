@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css reset */
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        /* top 区域 */
+        .container .top{
+            height: 98px;
+            /* background-color: chartreuse; */
+
+        }
+        .container .top .content{
+            width: 1130px;
+            height: 98px;
+            /* background-color: darkblue; */
+            margin: 0 auto;
+          
+        }
+        .container .top .top-logo{
+            height: 98px;
+            width: 200px;
+            background-image: url(https://account.xiaomi.com/static/res/7f6f2f5/account-static/respassport/acc-2014/img/mistore_logo.png);
+            background-repeat: no-repeat;
+        }
+        /* center区域 */
+        .container .center{
+            /* width: 1130px; */
+            height: 588px;
+            margin: 0 auto;
+            /* background-color: darkcyan; */
+            background-position: top center;
+            background-image: url(https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/aece569d6689b4c461bb53efd9eea9c7.jpg);
+        }
+        .container .center .content{
+            width: 1130px;
+            height: 588px;
+            /* background-color:green; */
+            margin: 0 auto;
+            position: relative;
+        }
+        .container .center .login-content{
+            width: 410px;
+            height: 556px;
+            
+            background-color:white;
+            /* float: right; */
+            position: absolute;
+            right: 0;
+            top: 32px;
+            /* margin-right: 0;
+            margin-left: auto; */
+        }
+        .container .center .line{
+            width: 1px;
+            height: 24px;
+            border: solid 1px #e0e0e0;
+            background-color: #e0e0e0;
+            margin: 0 42px ;
+        }
+        .container .nav-tabs{
+            padding:  27px 0 24px;
+            font-size: 24px;
+            text-align: center;
+            color: #666;
+        }
+        .container .nav-tabs a{
+        
+            font-size: 24px;
+        }
+        .container .nav-tabs a:hover{
+            color: #f56600;
+        }
+        .container .nav-tabs .active{
+            color: #f56600;
+        }
+        .container .login-form .login-area{
+            width: 348px;
+            /* height: 448px; */
+            margin: 0 auto;
+            /* background-color: red; */
+        }
+      
+        .container .login-area input[type="text"]{
+            width: 306px;
+            height: 22px;
+            padding: 13px 16px 13px 14px;
+            outline: none;
+            margin-bottom: 18px;
+
+        }
+        .container .login-area input[type="button"]{
+            background-color: #ff6700;
+            width: 340px;
+            height: 50px;
+            color: white;
+            line-height: 50px;
+            font-size: 14px;
+            border: 0;
+        }
+        .container .login-area p{
+            color: #ff6700;
+            font-size: 14px;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .container .login-area{
+            text-align: center;
+        }
+        .container .login-area .links-area{
+            color: #999;
+            font-size: 14px;       
+        }
+        .container .login-area .links-area:hover{
+            color: #ff6700       
+        }
+        .container .other-login{
+            text-align: center;
+            position: absolute;
+            width: 100%;
+            bottom: 20px;
+        }
+        .container .other-login li{
+            width: 30px;
+            height: 30px;
+            background-color: red;
+            border-radius: 50%;
+            /* float: left; */
+            display: inline-block;
+            margin: 0 17px;
+        }
+        .container .other-login .qq{
+            background-color: #0288d1;
+        }
+        .container .other-login .sina{
+            background-color:#d32f2f;
+        }
+        .container .other-login .alipay{
+            background-color: #0ae;
+        }
+        .container .other-login .wechat{
+            background-color: #00d20d;
+        }
+        .container .other-login i{
+            background-image: url("https://account.xiaomi.com/static/res/166d6dc/account-static/respassport/acc-2014/img/icons_type.png");
+            width: 18px;
+            height: 18px;
+            display: block;
+            margin:  4px auto 0;
+        }
+        .container .qq i{
+            background-position: -19px 0;
+        }
+        .container .sina i{
+            background-position: -38px 0;
+        }
+        .container .alipay i{
+            background-position: -57px 0;
+            width: 25px;
+        }
+        .container .wechat i{
+            background-position: -83px 0;
+            width: 24px;
+        }
+        /* bottm 区域 */
+        .container .bottom{
+            margin: 100px;
+        }
+        .container .nf-link-area{
+            text-align: center;
+        }
+        .container .nf-link-area li{
+            display: inline-block;
+            color: #333;
+        }
+        .container .nf-link-area li:hover{
+            color: pink;
+            cursor: pointer;
+        }
+        .container .nf-link-area span{
+            margin: 0 10px;
+        }
+        .container .bottom .nf-intro{
+            text-align: center;
+            color: #757575;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- top区域 -->
+        <div class="top">
+            <div class="content">
+                    <div class="top-logo"></div>
+            </div>
+        </div>
+        <!-- center区域 -->
+        <div class="center">
+            <div class="content">
+                <div class="login-content">
+                    <div class="nav-tabs">
+                        <a class="active" href="">账号登录</a>
+                        <span class="line"></span>
+                        <a href="">扫码登录</a>
+                    </div>
+                    <div class="login-form">
+                        <div class="login-area">
+                            <input type="text" placeholder="邮箱/手机号/小米ID">
+                            <input type="text" placeholder="密码">
+                            <input type="button" name="" id="" value="登录">
+                            <p>手机短信登录/注册</p>
+                            <div class="">
+                                <a  class="links-area" href="">立即注册</a>
+                                <span>|</span>
+                                <a class="links-area" href="">忘记密码?</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="other-login">
+                        <ul class="clearfix">
+                            <li class="qq">
+                                <i></i>
+                            </li>
+                            <li class="sina">
+                                <i></i>
+                            </li>
+                            <li class="alipay">
+                                <i></i>
+                            </li>
+                            <li class="wechat">
+                                <i></i>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 底部区域 -->
+        <div class="bottom">
+            <div class="nf-link-area" >
+                <ul >
+                    <li>简体
+                        <span>|</span>
+                    </li>
+                    <li>繁体
+                        <span>|</span>
+                    </li>
+                    <li>
+                        English
+                        <span>|</span>
+                    </li>
+                    <li>常见问题
+                        <span>|</span>
+                    </li>
+                    <li>隐私政策
+                    </li>
+                </ul>
+            </div>
+            <p class=" nf-intro">小米公司版权所有-京ICP备10046444-<span><img src="https://account.xiaomi.com/static/res/9204d06/account-static/respassport/acc-2014/img/ghs.png"></span>京公网安备11010802020134号京公网安备11010802020134号-京ICP证110507号</p>
+        </div>
+    </div>
+</body>
+</html>

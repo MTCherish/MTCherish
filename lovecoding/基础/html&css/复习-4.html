@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            color: red;
+        }
+        #div1{
+            color: green;
+        }
+        div{
+            color: blue !important;
+        }
+        /* *(通配符)选择器：0 < 标签(元素)选择器：1 < 类选择器：10 < id选择器：100 < 内敛样式：1q <!important：1w */
+        /* 权重值相同的时候就是就近原则 */
+    </style>
+</head>
+<body>
+    <div class="box" id="div1" style="color: black;">hello </div>
+</body>
+</html>

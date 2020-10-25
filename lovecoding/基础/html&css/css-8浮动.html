@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        margin: 0;
+      }
+      .box-child{
+        width: 100px;
+        height: 100px;
+        background-color: chartreuse;
+        color: crimson;
+        float: left; /*浮动 */
+        border: black solid 1px;
+      }
+      .box{
+        background-color: blue;
+      }
+      .box2{
+        width: 200px;
+        height: 200px;
+        background-color: crimson;
+      }
+      /* .clearfix{
+        clear: both;
+      } */
+      /* 伪元素选择器 */
+      .clearfix::after{
+       content: "";
+       color: darkgrey;
+       clear: both;
+       display: block;
+      }
+    </style>
+</head>
+<body>
+  <!-- 浮动元素会脱离文档流 -->
+  <!-- 整个浮动出这个文档，用伪元素或者加一个div啥的把浮动给解除一下 -->
+  <div class="box clearfix">
+    <div class="box-child">1</div>
+    <div class="box-child">2</div>
+    <div class="box-child">3</div>
+    <!-- <div class="clearfix">hello world</div> -->
+  </div>
+  <div class="box2">1</div>
+   
+   
+</body>
+</html>
