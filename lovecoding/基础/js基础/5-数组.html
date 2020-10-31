@@ -7,11 +7,12 @@
 </head>
 <body>
     <script>
-        // 变量类型不是一直不变的，赋值的时候都会随着改变
-        
-        var str = "hello world";
-        str = 666;
-        console.log(str);
+        var arr = [];
+        var arr1 = [1,2,3,4];
+        console.log(arr1);
+        arr = arr1;
+        console.log(arr);
+        // 这种数组的复制是把地址给 就是传地址
     </script>
 </body>
 </html>

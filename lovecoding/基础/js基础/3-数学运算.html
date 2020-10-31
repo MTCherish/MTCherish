@@ -10,9 +10,14 @@
         var i = 1;
         var j = i + 1;
         var str = "100";
+        var a = "a";
+        a += 1; //字符串拼接  后有  一个隐式类型转换  
+        // 只要是 + 两边有一个是字符型 ， 拼接完后就是一个字符串类型
+        console.log(a);//向控制台输出
         parseInt(str);
         console.log(str);
         var a = true;
+        console.log(a+1);
         console.log(a*1);
     </script>
 </body>

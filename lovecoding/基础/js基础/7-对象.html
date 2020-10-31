@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 引用数据类型  数组 对象
+        var person = {
+            Name:"小明",
+            Sex:"男"
+        }
+        console.log(person);
+        person.Name = "帅哥";
+        console.log(person);
+        // 赋值 没有就会添加进去
+        person.School = "黑大";
+        
+        console.log(person);
+        // 可以调用删除属性
+        delete person.Sex;
+        console.log(person);
+    </script>
+</body>
+</html>
