@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <h1>hello world</h1> 
+    </div>
+    <script>
+        var obox = document.getElementById("box");
+        console.log(obox.innerText);
+        // innerText 标签内的内容
+        obox.innerText = "<h1>你好世界</h1>";  // 整个当做一个字符串 标签不解析
+
+        obox.innerHTML = "<h1>你好世界</h1>"; // 整个当做一个字符串 标签解析
+    </script>
+</body>
+</html>

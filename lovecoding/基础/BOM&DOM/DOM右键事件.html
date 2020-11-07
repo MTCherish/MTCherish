@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            display: none;
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            border: 1px solid #DDD;
+            background-color: #DDD;  
+        }
+        ul{
+            
+            list-style: none;
+            width: 200px;
+            height: 300px;
+        }
+        li{
+            padding: 10px;
+            border-bottom: 1px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box_1">
+        <ul>
+            <li>1111111</li>
+            <li>1111111</li>
+            <li>1111111</li>
+        </ul>
+    </div>
+
+    <script>
+        // var obox =document.getElementsByClassName("box")[0];
+        // obox.oncontextmenu = function(event){
+        //     console.log("111");
+        //     event.preventDefault();
+        // }
+
+        var obox =document.getElementById("box_1");
+        
+        document.oncontextmenu = function(event){
+            var y=event.clientY+"px";
+            var x=event.clientX+"px";
+            console.log(x);
+            obox.style.display = "block";
+            console.log(event);
+            obox.style.top = y;
+            obox.style.left = x;
+            event.preventDefault();
+        }
+    </script>
+
+</body>
+</html>

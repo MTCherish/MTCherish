@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"> hello</div>
+    <script>
+        var obox = document.getElementById("box");
+
+
+        //事件源 事件处理函数  事件对象
+        obox.onclick = function(event){
+            console.log("hello");
+        }
+        obox.onclick = function(event){
+            console.log("world");
+        }
+        // 使用上面的方法会对事件绑定产生一定的覆盖效果
+        obox.addEventListener("click",function(){
+            console.log("hello");
+        });
+        obox.addEventListener("click",function(){
+            console.log("world");
+        });
+          // 使用上面的方法会对事件绑定产生没有覆盖效果，都会执行
+    </script>
+</body>
+</html>
