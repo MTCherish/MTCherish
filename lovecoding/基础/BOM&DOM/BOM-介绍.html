@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- BOM  浏览器对象模型 
+        window相当于Object  顶级对象 
+    -->
+    <script>
+        // 地址栏
+        // window.location控制
+        window.location="https://www.baidu.com";
+        history.back()  ; //回退
+        history.forward(); // 前进
+        history.go() ;//当前为0 前进go(-1) 类似
+
+        // 滚动条管理
+        // window.scroll
+        // window.scrollTO(x,y); //相对于页面
+        // window.scrollBy(x,y);//相对于当前位置
+
+
+        //窗口控制
+       // window.open(url);
+        window.open("https://www.taobao.com");
+
+        setTimeout(function(){
+
+        },2000);
+        setInterval(function(){}, 1000);
+
+        clearInterval()
+    </script>
+</body>
+</html>

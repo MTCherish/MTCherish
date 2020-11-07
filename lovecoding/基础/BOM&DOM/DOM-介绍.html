@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  DOM 文档对象模型 -->
+    <div>hello world</div>
+    <div>你好</div>
+
+    <script>
+        var box = document.getElementsByTagName("div");//HTMLCollection 类数组 类似的数组
+        console.log(box[0]);
+        box[0].style.color = "red";
+        // css中 - 命名方式要用驼峰方式去改变 比如 font-size  = fontSize
+    </script>
+</body>
+</html>
