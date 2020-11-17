@@ -7,15 +7,22 @@
 </head>
 <body>
     <script>
-        function foo(){
-            
+        function foo(cnt){
+            console.log("hello");
+            var num = 0;
+            for(var i = 0; i < cnt; i++){
+             num += i;
+            }
+            console.log(num);
         }
-        var num = 0;
-        for(var i = 0; i < 9; i++){
-            num += i;
-        }
+        // var num = 0;
+        // for(var i = 0; i < 9; i++){
+        //     num += i;
+        // }
+        foo(20);  
 
-        console.log(num);
+        // 想在log里面调用 函数要有返回值，不然的话会输出一个undefined 要return一下
+        console.log(foo(20));
     </script>
 </body>
 </html>
