@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 0b111; // 二进制
+        var b = 0o10; // 八进制 老语法 0开头 新语法 0o
+        var c = 0xa;  // 十六进制
+        var d = 10;  // 十进制
+
+        var  e = "0xa";
+        //  把其他进制转换成十进制，使用parseInt，第一个参数是一个字符型 第二个参数是进制
+        console.log(parseInt(e,16));
+
+        // 把十进制转化成其他的进制 转换完成是个字符型
+        console.log(d.toString(2));
+        console.log(d.toString(8));
+    </script>
+</body>
+</html>

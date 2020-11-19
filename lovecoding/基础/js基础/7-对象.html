@@ -10,7 +10,10 @@
         // 引用数据类型  数组 对象
         var person = {
             Name:"小明",
-            Sex:"男"
+            Sex:"男",
+            talk:function(){
+                console.log("hello");
+            }
         }
         console.log(person);
         person.Name = "帅哥";
@@ -24,7 +27,7 @@
         delete person.Sex;
         console.log(person);
 
-        
+        person.talk();
     </script>
 </body>
 </html>

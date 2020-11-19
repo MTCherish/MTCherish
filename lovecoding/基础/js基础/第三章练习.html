@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var str = "<h1>hello<h1>";
+        var str1 = "<h1 class='active'>hello<h1>";
+
+        //  可以不var  会给你隐式定义 在window下
+        a = 10;
+        console.log(a);
+
+        // 在js里面允许变量重复定义  但是会覆盖
+
+
+        // 当是undefined的时候是false
+        var a = true ,b;
+        var a = "0x65";
+        var b = "0115";
+        console.log(parseInt(a,16));
+        console.log(parseInt(b,8));
+      
+
+        if([1]==[1]){
+            console.log("成立");
+        }else{
+            console.log("不成立");
+        }
+
+        console.log([1]);
+
+        //  编程
+        var x = Math.random();
+        var y = Math.random();
+        console.log(x>y?x:y);
+
+
+        var today = new Date();
+        var year = today.getFullYear();
+        if((year%4==0&&year%100!=0)||(year%400==0)){
+            console.log("闰年");
+        }else{
+            console.log("不是闰年");
+        }
+    </script>
+</body>
+</html>
