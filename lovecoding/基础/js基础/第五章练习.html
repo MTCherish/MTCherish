@@ -7,24 +7,36 @@
 </head>
 <body>
     <script>
-        var x = function(){
+        // var x = function(){
 
-        }
+        // }
         
-// 匿名函数
-        function foo(){
+        // // 匿名函数
+        // function foo(){
 
-        }
+        // }
 
-// 具名函数
+        // // 具名函数
 
-    function foo(){
-        return function(){
-            console.log("123");
-        }
-    }
-    // 可以return 一个函数体
-   console.log(foo()());
+        // function foo(){
+        //         return function(){
+        //             console.log("123");
+        //     }
+        // }
+        //     // 可以return 一个函数体
+        // console.log(foo()());
+
+        // function foo(x,y){
+        //     console.log(x,y);
+        // }
+        // foo(1);
+        // // 从前往后匹配  ，没匹配的就undefined
+        var x = window.prompt("请输入与x");
+        x = parseInt(x);
+       document.write(4*Math.pow(x,2)+3*x+2);
+    //    doucument.write会覆盖页面原有的内容
+
+            
     </script>
 </body>
 </html>
