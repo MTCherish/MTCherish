@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // for(var i=0,j=10; i=j=10;  i++, j--){
+        //     console.log( "11");
+        // }
+        //  switch 中 case 可以写简单的表达式 例如1 + i
+        var age = window.prompt();
+        age = parseInt(age);
+        if(age < 14){
+            console.log("儿童");
+        }
+        if(age >= 14 && age<24 ){
+            console.log("青少年");
+        }
+        if(age >= 24 && age<40 ){
+            console.log("青年");
+        }
+        if(age >= 40 && age<60 ){
+            console.log("中年");
+        }
+        if(age >= 60 ){
+            console.log("老年");
+        }
+
+
+
+    // 用switch去进行匹配的时候  case 中 进行匹配是 ===进行严格匹配
+    
+        for ( var i = 0 ;i<5;i++){
+            for(var j = 0 ; j < i; j++ ){
+                document.write(j);
+            }
+            document.write("<br/>");
+        }
+    
+    // 空格的实体字符 &nbsp;  特殊符号 用实体字符
+
+
+    //  Math.floor() 向下取整 小数不要
+    //  Math.ceil()  向上取整 有小数 整数加一
+    //  Math.round()  四舍五入
+    </script>
+</body>
+</html>
