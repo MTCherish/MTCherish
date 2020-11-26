@@ -17,6 +17,41 @@
         console.log(weekday);
 
         // 取出来的是周几 
+
+        var str = "hello world";
+        // substr(开始位置，长度)
+        console.log(str.substr(6,1));
+        // charAt(位置)
+        console.log(str.charAt(0));
+        // indexOf("w") 判断当前字符出现的位置，第一次出现的位置 ，不仅是字符也可以是字符串
+        // 假如当前没有这个字符串 则返回值为 -1
+
+
+        // js 中返回数组长度就是length  这个属性
+
+
+
+        var timer = new Date();
+        
+        var year = timer.getFullYear();
+        var month = timer.getMonth()+1;
+        var day = timer.getDate();
+
+        var hour = timer.getHours();
+        var min = timer.getMinutes();
+        var second = timer.getSeconds();
+
+
+        var str  = "123456alnaca13";
+        console.log(str[0]);
+
+        // split() 	把字符串分割为字符串数组。
+        // 例如  str.split("") 就是将这个string变成一个数组类型
+        // isNaN() 传进去一个参数  如果是NaN就是 true 不是就是false
+
+
+        // slice(开始，结束)  开始数组的下标开始 得到一个新的返回去  
+        //  join("")   emmm 就是在数组中把join里面写的都加一下
     </script>
 </body>
 </html>
