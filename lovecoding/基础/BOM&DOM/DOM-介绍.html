@@ -11,8 +11,12 @@
     <div>你好</div>
 
     <script>
-        var box = document.getElementsByTagName("div");//HTMLCollection 类数组 类似的数组
+        var box = document.getElementsByTagName("div");//HTMLCollection 类数组 类似的数组，并不是真正的数组
         console.log(box[0]);
+        // 一定要用像数组一样把这个拿出来 可以用下标 一定不能直接操作  不能对整个HTMLCollection进行操作
+
+
+        // 通过这个写的是   内敛样式 变成的内敛样式是只是把重复的覆盖 相当于合并  
         box[0].style.color = "red";
         // css中 - 命名方式要用驼峰方式去改变 比如 font-size  = fontSize
     </script>
