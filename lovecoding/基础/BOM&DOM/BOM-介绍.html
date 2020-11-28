@@ -17,25 +17,45 @@
         window.location="https://www.baidu.com";
         history.back()  ; //回退
         history.forward(); // 前进
-        history.go() ;//当前为0 前进go(-1) 类似
+        history.go() ;//跳转指定的历史页面通过参数进行 当前为0 前进go(-1) 类似  负值向后 正直向前
 
         // 滚动条管理
         // window.scroll
-        // window.scrollTO(x,y); //相对于页面
-        // window.scrollBy(x,y);//相对于当前位置
+        // window.scrollTO(x,y); //相对于页面  横向和纵向  相对于滚动条的整体状态
+        // window.scrollBy(x,y);//相对于当前位置    相对于滚动条的当前状态
 
 
         //窗口控制
        // window.open(url);
+
+    //    window.location是相当于在地址栏修改  open是相当于重新打开一个新的页面
         window.open("https://www.taobao.com");
 
         
+        // 定时函数   毫秒1000 = 1秒
+
+        // 隔多少秒后执行一次之后就完成了
         setTimeout(function(){
 
         },2000);
+
+        // 清除定时函数
+        clearTimeout()
+
+
+        // 每隔一定时间就执行一次，一直执行
         setInterval(function(){}, 1000);
 
-        clearInterval()
+        // setInterval是有返回值的 返回的是唯一标识 就是第几个 相当于索引，第一个就是1 第二个就是2
+
+        // 清除定时函数  里面要传一个标识
+        clearInterval();
+
+        var timer = setInterval(function(){
+            if(timer == 1){
+                clearInterval(timer);
+            }
+        },2000)
     </script>
 </body>
 </html>
