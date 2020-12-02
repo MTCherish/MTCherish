@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <div id="box"> hello</div>
     <script>
         var obox = document.getElementById("box");
 
 
-        //事件源 事件处理函数  事件对象
-        obox.onclick = function(event){
+        //事件源(obox)  事件处理函数(function)  事件对象(event)  事件名称(具体事件  onclick)
+        obox.onclick = function (event) {
             console.log("hello");
         }
-        obox.onclick = function(event){
+        obox.onclick = function (event) {
             console.log("world");
         }
-        // 使用上面的方法会对事件绑定产生一定的覆盖效果
-        obox.addEventListener("click",function(){
+        // event是事件对象是自动创建的 里面有许多自带的东西
+        // 使用上面的方法会对事件绑定产生一定的覆盖效果 因为是通过赋值的方式 是会覆盖的效果
+
+
+        obox.addEventListener("click", function () {
             console.log("hello");
         });
-        obox.addEventListener("click",function(){
+        obox.addEventListener("click", function () {
             console.log("world");
         });
-          // 使用上面的方法会对事件绑定产生没有覆盖效果，都会执行
+        // 添加事件监听器 相当于可以添加好多事情
+        // 使用上面的方法会对事件绑定产生没有覆盖效果，都会执行
     </script>
 </body>
+
 </html>
