@@ -48,6 +48,7 @@
 
         var obox =document.getElementById("box_1");
         
+        // onclick 是左键事件 oncontextmeau是右键事件
         document.oncontextmenu = function(event){
             var y=event.clientY+"px";
             var x=event.clientX+"px";
@@ -57,6 +58,7 @@
             obox.style.top = y;
             obox.style.left = x;
             event.preventDefault();
+            // event.preventDefault()  取消浏览器默认行为 通过事件对象 
         }
     </script>
 

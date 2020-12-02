@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+           position: fixed;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background-color:rgba(0,0,0, .3); 
+           position: fixed;
+           display: none;
+        }
+        ul{
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+            position: fixed;
+            z-index: 10px;
+            display: none;
+        }
+        li{
+            border-bottom: 1px solid black;
+            padding: 10px 20px;
+            /* display: none; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <ul id="meau">
+        <li>菜单一</li>
+        <li>菜单二</li>
+        <li>菜单三</li>
+        <li>菜单四</li>
+    </ul>
+    <script>
+
+        var odom = document.documentElement;
+        // 通过这个获取的整个文档 只要里面写的都有
+        // console.log(odom);
+        // document 是 window的一个子对象 dom 是 bom下的一个子对象
+
+        var omeau = document.getElementById("meau");
+        var obox  = document.getElementsByClassName("box")[0];
+        odom.oncontextmenu = function(event){
+          
+            obox.style.display = "block";
+            omeau.style.display = "block";
+
+            var x = event.clientX+"px";
+            var y = event.clientY+"px";
+
+            // console.log(x , y);
+            omeau.style.top = y;
+            omeau.style.left = x;
+            event.preventDefault();
+            // 阻止浏览器默认行为
+        }
+        obox.addEventListener("click",function(){
+            obox.style.display = "none";
+            omeau.style.display = "none";
+        });
+    </script>
+</body>
+</html>
