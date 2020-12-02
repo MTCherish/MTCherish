@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* *{}  用来css reset重新设置  
+        
+            垂直水平方向居中的实现 ：定位 (absolute 相对定位 相对于已经定位的父元素  fixed 绝对定位 相对于浏览器 )
+
+        */
         *{
             margin: 0;
             padding: 0;
@@ -19,7 +24,7 @@
             left: 50%;
             margin-left: -200px;
             border-radius: 10px;
-            box-shadow: 1px 1px 5px #aaa;
+            box-shadow: 1px 1px 5px #aaa;   /* 阴影 横向偏移量 纵向偏移量 扩散值(值越大 阴影越虚) 颜色*/
             text-align: center;
         }
         .box2{
@@ -36,7 +41,7 @@
             width: 80px;
             height: 50px;
             outline: none;
-            border-radius: 10px;
+            border-radius: 10px;  /*画圆 圆的半径为 10px*/
             margin-top: 20px;
         }
     </style>
@@ -44,8 +49,6 @@
 <body>
     <div class="box1" id="box_1">
         <div class="box2" id="box_2">100</div>
-        
-       
         <Button class="box3" id="box_3">开始</Button>
     </div>
     <script>
@@ -69,7 +72,7 @@
                     if(parseInt(obox2.innerText)==0){
                         obox2.innerText = 100;
                     }
-                }, 2000);
+                }, 1000);
             }   
            else if( obox3.innerText == "暂停"){
                 obox3.innerText="开始";

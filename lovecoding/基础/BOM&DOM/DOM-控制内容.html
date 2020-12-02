@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <h1>hello wrold</h1>
+    </div>
+    <script>
+        var obox = document.getElementById("box");
+        obox.innerText = "你好！世界！";
+
+        // 可以用innerText 控制 标签的内容 获得是文本的内容 节点文本
+        // 假如有标签  比如写成obox.innerText = "<h1>你好世界</h1>" 的时候  会变成整个的字符串 不会解析这个标签
+
+        obox.innerHTML = "<h1>你好 世界</h1>";
+
+        // 用innerHTML 这个可以解析出来标签 不是只是单独的看成一个字符串可以将标签解析
+    </script>
+</body>
+</html>
