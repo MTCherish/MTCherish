@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        
+
     </style>
 </head>
+
 <body>
-    
+    <!-- <div class="" id=""></div>  class id 属性 -->
+    <img src="" alt="图片">
+    <button id="btn">按钮</button>
+
+    <script>
+        var btn = document.getElementById("btn");
+        var im = document.getElementsByTagName("img")[0];
+
+        btn.addEventListener("click",function(event){
+            // 获取属性并且设置
+            im.setAttribute("src","../image/1.jpg");
+
+            // 获取元素的属性值
+            var x = btn.getAttribute("id");
+            console.log(x);
+
+            // 总结 类似于J2EE的设置
+        });
+    </script>
 </body>
+
 </html>
