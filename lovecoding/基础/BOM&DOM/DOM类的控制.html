@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" >hello world</div>
+    <button id="btn">按钮</button>
+
+    <script>
+        var box = document.getElementById("box");
+        var btn = document.getElementById("btn");
+
+        btn.addEventListener("click",function(event){
+            // box.className = "active";
+            // className 可以直接操作类名  但是有一个缺点 比如原来有类名的话直接就给覆盖掉了
+            
+            box.classList.add("active");
+            // 用classList 可以把之前的那些变成一个列表 直接添加进去就OK 原来就还有 移除的话可以remove
+        
+        });
+    </script>
+</body>
+</html>
