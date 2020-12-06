@@ -98,20 +98,45 @@
         var img = document.getElementsByClassName("img-bar")[0].getElementsByTagName("li");
         var btn = document.getElementsByClassName("rightbtn")[0].getElementsByTagName("li");
         var btnl = document.getElementsByClassName("leftbtn")[0].getElementsByTagName("li");
-        for(var i = 0;i<btn.length;i++){
-            btn[i].index = i;
-             btn[i].addEventListener("mouseenter",function(event){
-                for(var j = 0;j<img.length;j++){
+        var nowIndex = 0;
+        img[0].className = "active";
+        function changeImg(index){
+            // +一个循环然后 %一个循环就是永远保证正值在轮回了
+            index = (index+5)%5;
+            
+            nowIndex = index;
+            for(var j = 0;j<img.length;j++){
                     img[j].classList.remove("active");
                 }
                 for(var j = 0;j<btn.length;j++){
                     btn[j].className="";
                 }
-                this.setAttribute("class","active");
-                img[this.index].className = "active";
+                btn[index].className = "active";
+                img[index].className = "active";
+        }
+        for(var i = 0;i<btn.length;i++){
+            btn[i].index = i;
+             btn[i].addEventListener("mouseenter",function(event){
+                 nowIndex = this.index;
+                 changeImg(this.index);
+                // for(var j = 0;j<img.length;j++){
+                //     img[j].classList.remove("active");
+                // }
+                // for(var j = 0;j<btn.length;j++){
+                //     btn[j].className="";
+                // }
+                // this.setAttribute("class","active");
+                // img[this.index].className = "active";
+                
              });
         }
         
+        btnl[0].addEventListener("click",function(event){
+            changeImg(nowIndex-1);
+        });
+        btnl[1].addEventListener("click",function(event){
+            changeImg(nowIndex+1);
+        });
     </script>
 </body>
 
