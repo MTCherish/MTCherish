@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 50px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        // offsetWidth 获取元素宽度
+        // style.width 设置元素宽度
+        var box = document.getElementById("box");
+        var timer;
+        box.addEventListener("mouseenter",function(event){
+            clearInterval(timer);
+             timer = setInterval(function(){
+                if(box.offsetWidth<=400){
+                      box.style.width = box.offsetWidth+10+"px";
+                }else{
+                    clearInterval(timer);
+                }
+            },16);
+        });
+        box.addEventListener("mouseleave",function(){
+            clearInterval(timer);
+             timer = setInterval(function(){
+                if(box.offsetWidth<=200){
+                    clearInterval(timer);
+                }else{
+                    box.style.width = box.offsetWidth-10+"px";
+                }
+            },16);
+        });
+    </script>
+</body>
+
+</html>

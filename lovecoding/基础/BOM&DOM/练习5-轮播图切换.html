@@ -98,12 +98,15 @@
         var img = document.getElementsByClassName("img-bar")[0].getElementsByTagName("li");
         var btn = document.getElementsByClassName("rightbtn")[0].getElementsByTagName("li");
         var btnl = document.getElementsByClassName("leftbtn")[0].getElementsByTagName("li");
+        
         var nowIndex = 0;
+        var timer =null;
+        var box = document.getElementsByClassName("box")[0];
         img[0].className = "active";
         function changeImg(index){
             // +一个循环然后 %一个循环就是永远保证正值在轮回了
             index = (index+5)%5;
-            
+
             nowIndex = index;
             for(var j = 0;j<img.length;j++){
                     img[j].classList.remove("active");
@@ -137,6 +140,22 @@
         btnl[1].addEventListener("click",function(event){
             changeImg(nowIndex+1);
         });
+
+        function playImg(){
+            timer = setInterval(function(){
+                changeImg(nowIndex+1);
+            },1000);
+        }
+
+        playImg();
+        box.addEventListener("mouseenter",function(event){
+            clearInterval(timer);
+        });
+
+        box.addEventListener("mouseleave",function(event){
+            playImg();
+        });
+
     </script>
 </body>
 
