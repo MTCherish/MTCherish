@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 160px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid black ;
+            border-radius: 10px;
+        }
+        #box1{
+            width: 0px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 10px;
+            background-color: red;
+        }
+        .avtive{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="box1">0</div>
+    </div>
+    <button class="btn">start</button>
+    <script>
+        var btn = document.getElementsByClassName("btn")[0];
+        var box1 = document.getElementById("box1");
+        var timer;
+        var temp = 0; 
+        btn.addEventListener("click",function(event){
+            timer = setInterval(function(){ 
+                if(box1.offsetWidth<=160){
+                    box1.className = "avtive";
+                    box1.style.width = box1.offsetWidth + 1 +"px"; 
+                    box1.innerText = temp  +"%";
+                    temp += 5/8;   
+                }else{
+                    clearInterval(timer);
+                }
+            },16);
+        });
+    </script>
+</body>
+</html>
