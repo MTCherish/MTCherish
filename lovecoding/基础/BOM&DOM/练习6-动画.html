@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 50px;
+            background-color: red;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div  class="box"></div>
+    <div  class="box"></div>
+    <div  class="box"></div>
+    <script>
+        var box = document.getElementsByClassName("box");
+     
+        for(var i = 0;i < box.length; i++){
+            box[i].timer = 0;
+            box[i].addEventListener("mouseenter",function(){
+                clearInterval(this.timer);
+                var that = this;
+                this.timer = setInterval(function(){
+                    // 这里如果用this this是window  谁调用this就是谁
+                    if(that.offsetWidth<=400){
+                        that.style.width = that.offsetWidth + 10 +"px";
+                    } else{
+                        clearInterval(that.timer);
+                    }
+                },16)
+            });
+        }
+        for(var i = 0;i < box.length; i++){
+            box[i].addEventListener("mouseleave",function(){
+                clearInterval(this.timer);
+                var that = this;
+                this.timer = setInterval(function(){
+                    // 这里如果用this this是window  谁调用this就是谁
+                    if(that.offsetWidth>=200){
+                        that.style.width = that.offsetWidth - 10 +"px";
+                    } else{
+                        clearInterval(that.timer);
+                    }
+                },16)
+            });
+        }
+    </script>
+</body>
+</html>
