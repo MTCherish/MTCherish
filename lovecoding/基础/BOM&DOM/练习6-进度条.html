@@ -19,13 +19,13 @@
             border-radius: 10px;
             background-color: red;
         }
-        .avtive{
-            display: block;
-        }
+    
     </style>
 </head>
 <body>
     <div id="box">
+        <!-- 这里面 当box1 width是0 的时候 0应该是不显示的 但是这个显示是因为 他超出了父元素的范围
+            如果想让它看不见的话  应该 overflow hidden 一下把他显示隐藏 像是小米页的那个二维码 -->
         <div id="box1">0</div>
     </div>
     <button class="btn">start</button>
@@ -37,7 +37,7 @@
         btn.addEventListener("click",function(event){
             timer = setInterval(function(){ 
                 if(box1.offsetWidth<=160){
-                    box1.className = "avtive";
+                    
                     box1.style.width = box1.offsetWidth + 1 +"px"; 
                     box1.innerText = temp  +"%";
                     temp += 5/8;   
