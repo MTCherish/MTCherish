@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+        有问题
+        ？？？？？？
+    <script>
+        var box = document.getElementsByClassName("box")[0];
+        var x ;
+        var y;
+        // box.addEventListener("mousedown",function(event){
+        //     x = event.clientX - box.offsetLeft;
+        //     y = event.clientY - box.offsetTop;
+           
+        // });    
+        // box.addEventListener("mousemove",function(event){
+        //         box.style.left = event.clientX - x + "px";
+        //         box.style.top = event.clientY - y + "px";
+        //     })
+        // box.addEventListener("mouseup",function(event){
+        //     // console.log(222);
+        //     box.onmousedown = null;
+        //     // console.log( box.onmousedown);
+        //     box.onmousemove = null;
+        //     // console.log( box.onmousemove);
+        // //    console.log(111);
+        // })
+        // setTimeout(function(){
+        //     console.log( box.onmousedown);
+        // },2000)
+        // console.log( box.onmousedown);
+
+       
+
+        box.onmousedown = function(event){
+            x = event.clientX - box.offsetLeft;
+            y = event.clientY - box.offsetTop;
+            document.onmousemove = function(event){
+                box.style.left = event.clientX - x + "px";
+                box.style.top = event.clientY - y + "px";
+            }
+        }
+       box.onmouseup = function(event){
+           document.onmousemove = null;
+       }
+
+
+    </script>
+</body>
+</html>
