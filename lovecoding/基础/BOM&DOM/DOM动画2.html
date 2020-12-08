@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 160px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid black ;
+            border-radius: 10px;
+        }
+        #box1{
+            width: 0px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 10px;
+            background-color: red;
+        }
+    
+    </style>
+</head>
+<body>
+
+    
+    <div id="box">
+        <!-- 这里面 当box1 width是0 的时候 0应该是不显示的 但是这个显示是因为 他超出了父元素的范围
+            如果想让它看不见的话  应该 overflow hidden 一下把他显示隐藏 像是小米页的那个二维码 -->
+        <div id="box1">0</div>
+    </div>
+    <button class="btn">start</button>
+    <script>
+
+        //  requestAnimationFrame();
+        //  这个函数就是类似于 setTimeout 这个一样 屏幕刷新的时候才执行 只会执行一次
+        var btn = document.getElementsByClassName("btn")[0];
+        var box1 = document.getElementById("box1");
+        var timer;
+        var temp = 0; 
+        function run(){
+            if(box1.offsetWidth<160){
+                box1.innerText = temp  +"%";
+                temp += 5/8; 
+                box1.style.width = box1.offsetWidth + 1 +"px";
+                requestAnimationFrame(run);
+            }
+           
+        }
+        // 不加括号的： 会等待事件触发再调用函数。   表示的函数指针，通俗的理解就是等待某个特定的位置后执行，而不是立马执行
+        // 加括号的：不会等待事件触发直接调用函数    表示执行方法
+        // 比如 如果我的那个function 里面的run 调用的时候加了括号 就出现了直接完成的效果了 
+        btn.addEventListener("click",function(event){
+            requestAnimationFrame(run);
+
+
+            // timer = setInterval(function(){ 
+            //     if(box1.offsetWidth<=160){
+                    
+            //         box1.style.width = box1.offsetWidth + 1 +"px"; 
+            //         box1.innerText = temp  +"%";
+            //         temp += 5/8;   
+            //     }else{
+            //         clearInterval(timer);
+            //     }
+            // },16);
+        });
+    </script>
+</body>
+</html>
+
