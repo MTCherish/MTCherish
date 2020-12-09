@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        var box = document.getElementById("box");
+        // box.onclick = function(){
+        //     console.log("world");
+        // }
+
+        // box.onclick = function(){
+        //     console.log("hello");
+        // }
+
+
+        // 事件绑定 这个相当于是赋值操作  会有覆盖作用
+        // 对于解绑的时候 直接赋值为空的就OK 
+
+        box.addEventListener("click",function(){
+            console.log("hello");
+        })
+
+        box.addEventListener("click",function(){
+            console.log("world");
+        })
+
+        // 这个事件绑定会有 一直都有 就是所有的都会绑定下
+        // removeEventListener 去解绑
+
+    </script>
+</body>
+</html>
