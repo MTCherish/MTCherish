@@ -37,7 +37,8 @@
         btn.addEventListener("click",function(event){
             timer = setInterval(function(){ 
                 if(box1.offsetWidth<=160){
-                    
+                    // offsetWidth 不是一个特别准确的值 是一个四舍五入的值
+                    // getBoundingClientRect()  获取的比较准确 返回的当前元素的位置 大小啥的
                     box1.style.width = box1.offsetWidth + 1 +"px"; 
                     box1.innerText = temp  +"%";
                     temp += 5/8;   

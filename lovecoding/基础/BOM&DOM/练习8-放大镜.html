@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin :0;
+            padding: 0;
+        }
+        .left,.right{
+            width: 400px;
+            height: 400px;
+            float: left;
+            margin-left: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        .left img{
+            width: 400px;
+            height: 400px;
+        }
+        .right img{
+            width: 800px;
+            height: 800px;
+            position:  absolute;
+            top: 0;
+            left: 0;
+        }
+        .left .box{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(255, 255, 255, .3);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <img src="../image/6.jpg" alt="">
+        <div class="box">
+        </div>
+    </div>
+    <div class="right">
+        <img src="../image/6.jpg" alt="" id="bimg">
+    </div>
+
+    <script>
+        var box = document.getElementsByClassName("box")[0];
+        var left = document.getElementsByClassName("left")[0];
+        var bimg = document.getElementById("bimg");
+        left.onmousemove = function(event){
+            var thistop = event.clientY - (box.offsetWidth/2);
+            var thisleft = event.clientX - (box.offsetWidth/2);
+            if(thisleft<=0){
+                thisleft = 0;
+            }
+            if(thisleft>=200){
+                thisleft = 200;
+            }
+            if(thistop<=0){
+                thistop = 0;
+            }
+            if(thistop>=200){
+                thistop = 200;
+            }
+            box.style.top = thistop + "px";
+            box.style.left = thisleft + "px";
+            bimg.style.left = -(thisleft*2) + "px";
+            bimg.style.top = -(thistop*2) + "px";
+        }
+    </script>
+</body>
+</html>
