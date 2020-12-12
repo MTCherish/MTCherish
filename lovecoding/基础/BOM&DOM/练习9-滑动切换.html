@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        body{
+            background-color: #000;
+        }
+        .box{
+            width: 490px;
+            height: 170px;
+            border: 5px solid white;
+            margin: 0 auto;
+            position: relative;
+        }
+        .box .img-bar img{
+            width: 490px;
+            height: 170px;
+        }
+        .img-bar ul{
+            width: 2450px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .img-bar li{
+            /* display: none; */
+            float: left;
+        }
+        .img-bar .active{
+            display: block;
+        }
+
+        .btn-bar li{
+            color: white;
+            float: left;
+            background-color: #f90;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 20px;
+            margin: 0 2px;
+        }
+        .btn-bar {
+            position: absolute;
+            top: 150px;
+            left: 0;
+            width: 100%;
+        }
+        .btn-bar .leftbth{
+            float: left;
+        }
+        .btn-bar .rightbtn{
+            float: right;
+        }
+        .btn-bar .active{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="img-bar">
+            <ul class="imglist">
+                <li ><img src="../image/6.jpg" alt=""></li>
+                <li><img src="../image/7.jpg" alt=""></li>
+                <li><img src="../image/8.jpg" alt=""></li>
+                <li><img src="../image/9.jpg" alt=""></li>
+                <li><img src="../image/10.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="btn-bar">
+            <div class="leftbtn">
+                <ul>
+                    <li>&lt;</li>
+                    <li>&gt;</li>
+                </ul>
+            </div>
+            <div class="rightbtn">
+                <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var rbtn = document.getElementsByClassName("rightbtn")[0].getElementsByTagName("li");
+        var imglist = document.getElementsByClassName("imglist")[0];
+        function changeImg(index){
+            var timer = setInterval(function(){
+                index = (index+5)%5;
+                imglist.style.left = imglist.offsetLeft - 10 +"px"; 
+                if(imglist.offsetLeft == -490*index){
+                    clearInterval(timer);
+                }
+            },16)
+        }
+        for(var i = 0;i<rbtn.length;i++){
+            rbtn[i].index = i;
+            rbtn[i].onclick = function(){
+                changeImg(this.index);
+            }
+        }
+    </script>
+</body>
+
+</html>
