@@ -104,21 +104,41 @@
     <script>
         var rbtn = document.getElementsByClassName("rightbtn")[0].getElementsByTagName("li");
         var imglist = document.getElementsByClassName("imglist")[0];
+        var nowindex = 0;
+        var direction = 1;
         function changeImg(index){
+
+            for(var i =0;i<rbtn.length;i++){
+                rbtn[i].className="";
+            }
+            if(nowindex>index){
+                direction = -1;
+                
+            }else{
+                direction = 1; 
+            }
+            rbtn[index].className = "active";
             var timer = setInterval(function(){
-                index = (index+5)%5;
-                imglist.style.left = imglist.offsetLeft - 10 +"px"; 
-                if(imglist.offsetLeft == -490*index){
+                // index = (index+5)%5;
+                if(imglist.offsetLeft == -490 * index){
+                    console.log(imglist.offsetLeft); 
+                    nowindex = index;
+                    console.log(nowindex);
                     clearInterval(timer);
                 }
+                imglist.style.left = imglist.offsetLeft + direction*(-10) +"px";
+             
             },16)
         }
         for(var i = 0;i<rbtn.length;i++){
             rbtn[i].index = i;
             rbtn[i].onclick = function(){
                 changeImg(this.index);
+                
             }
         }
+        console.log(imglist.offsetLeft);
+        
     </script>
 </body>
 
