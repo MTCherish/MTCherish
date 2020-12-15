@@ -23,13 +23,14 @@
             border: 5px solid white;
             margin: 0 auto;
             position: relative;
+            overflow: hidden;
         }
         .box .img-bar img{
             width: 490px;
             height: 170px;
         }
         .img-bar ul{
-            width: 2450px;
+            width: 2940px;
             position: absolute;
             top: 0;
             left: 0;
@@ -80,6 +81,7 @@
                 <li><img src="../image/8.jpg" alt=""></li>
                 <li><img src="../image/9.jpg" alt=""></li>
                 <li><img src="../image/10.jpg" alt=""></li>
+                <li ><img src="../image/6.jpg" alt=""></li>
             </ul>
         </div>
         <div class="btn-bar">
@@ -105,10 +107,25 @@
         var rbtn = document.getElementsByClassName("rightbtn")[0].getElementsByTagName("li");
         var imglist = document.getElementsByClassName("imglist")[0];
         var lbtn = document.getElementsByClassName("leftbtn")[0].getElementsByTagName("li");
+        var box =document.getElementsByClassName("box")[0];
+        rbtn[0].className = "active";
         var nowindex = 0;
         var direction = 1;
+        var flag = true;
+        var l = false,r=false;
         function changeImg(index){
+            if(!flag){
+                return true;
+            }
+            
             index = (index+5)%5;
+            if(r){
+                index = 5;
+            }
+            if(l){
+                index = -1;
+                imglist.style.left = -2450 + "px";
+            }
             for(var i =0;i<rbtn.length;i++){
                 rbtn[i].className="";
             }
@@ -118,16 +135,31 @@
             }else{
                 direction = 1; 
             }
-            rbtn[index].className = "active";
+            rbtn[(index+5)%5].className = "active";
+           if(l){
+               index = 4;
+           }
             var timer = setInterval(function(){
-                
-                if(imglist.offsetLeft == -490 * index){
-                    nowindex = index;
-                    clearInterval(timer);
-                }
+                flag = false;
                 imglist.style.left = imglist.offsetLeft + direction*(-10) +"px";
+                if(imglist.offsetLeft == -490 * index){
+                    if(r){
+                        imglist.style.left = 0;
+                        index = 0;
+                        r = false;
+                    }
+                    if(l){
+                        l = false;
+                    }
+                    nowindex = index;
+                    flag = true;
+                    clearInterval(timer);
+                   
+                }
+                
              
             },16)
+            
         }
         for(var i = 0;i<rbtn.length;i++){
             rbtn[i].index = i;
@@ -137,13 +169,36 @@
         }
 
         lbtn[1].onclick = function(){
+            if(nowindex+1==5){
+                r = true;
+            }
             changeImg(nowindex+1);
         }
-        lbtn[0  ].onclick = function(){
+        lbtn[0].onclick = function(){
+            if(nowindex-1==-1){
+                l = true;
+            }
             changeImg(nowindex-1); 
         }
        
+        // 定时轮播
+        var timer; 
+        function play(){
+            timer = setInterval(function(){
+                lbtn[1].onclick();
+            },1000)
+        }
         
+        play();
+        // 鼠标移入清除定时轮播
+        box.onmouseenter = function(){
+            clearInterval(timer);
+        }
+
+        // 鼠标移出重新定时轮播
+        box.onmouseleave = function(){
+            play();
+        }
     </script>
 </body>
 
