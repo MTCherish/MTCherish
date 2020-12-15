@@ -104,10 +104,11 @@
     <script>
         var rbtn = document.getElementsByClassName("rightbtn")[0].getElementsByTagName("li");
         var imglist = document.getElementsByClassName("imglist")[0];
+        var lbtn = document.getElementsByClassName("leftbtn")[0].getElementsByTagName("li");
         var nowindex = 0;
         var direction = 1;
         function changeImg(index){
-
+            index = (index+5)%5;
             for(var i =0;i<rbtn.length;i++){
                 rbtn[i].className="";
             }
@@ -119,11 +120,9 @@
             }
             rbtn[index].className = "active";
             var timer = setInterval(function(){
-                // index = (index+5)%5;
+                
                 if(imglist.offsetLeft == -490 * index){
-                    console.log(imglist.offsetLeft); 
                     nowindex = index;
-                    console.log(nowindex);
                     clearInterval(timer);
                 }
                 imglist.style.left = imglist.offsetLeft + direction*(-10) +"px";
@@ -134,10 +133,16 @@
             rbtn[i].index = i;
             rbtn[i].onclick = function(){
                 changeImg(this.index);
-                
             }
         }
-        console.log(imglist.offsetLeft);
+
+        lbtn[1].onclick = function(){
+            changeImg(nowindex+1);
+        }
+        lbtn[0  ].onclick = function(){
+            changeImg(nowindex-1); 
+        }
+       
         
     </script>
 </body>
