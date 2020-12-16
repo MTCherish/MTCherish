@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>hello</div>
+    <div>world</div>
+    <script>
+
+        // document.queryselector("") 是只能获取到一个元素  而且是第一个
+        // document.queryselector(".div") 获得类选择器 其他的相似
+        var box = document.querySelector("div");
+
+        // document.querySelectorAll("")  返回的是节点列表 能够获得多个  也是一个类数组  类似一个数组
+        var abox = document.querySelectorAll("div");
+        console.log(box);
+    </script>
+</body>
+</html>
