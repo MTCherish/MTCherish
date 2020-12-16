@@ -7,5 +7,40 @@
 </head>
 <body>
     <!-- html 属于节点的一个类型 -->
+
+    <div id="div1">
+        <h1>hello</h1>
+        <!-- test -->
+        <h1>world</h1>
+    </div>
+
+    <script>
+        var div1 = document.querySelector("#div1");
+
+        console.log(div1);
+
+        // childNodes 返回的是整个nodelist节点的类数组
+        console.log(div1.childNodes);
+
+        // nodeType 是一个节点的类型 每一种节点代表着一种数字 通过数字判断是哪一种节点
+        // 例如 注释文本 是8 
+        // 例如回车符 是3
+        // 例如html标签 是1
+        console.log(div1.childNodes[3].nodeType);
+
+
+        // 对每一种类型进行判断如果是某种类型做一些操作
+        // for(var i = 0 ;i<div1.childNodes.length ;i++){
+        //     if(div1.childNodes[i].nodeType == 1){
+        //         console.log(div1.childNodes[i]);
+        //     }
+        // }
+
+        // 这个属性直接就是返回的就是html标签 而是是所有的  返回的是一个HTMLCollection  类数组
+        console.log(div1.children);
+
+        // 这个方法可以看这个 标签下室友有子元素 返回一个bool值 如果有true 不是就false
+        console.log(div1.hasChildNodes());
+    </script>
 </body>
 </html>
