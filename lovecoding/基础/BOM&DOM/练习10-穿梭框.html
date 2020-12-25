@@ -14,6 +14,11 @@
             margin: 0 20px;
             
         }
+        .btn{
+            background-color: #ddd;
+            text-align: center;
+            margin-bottom: 10px;
+        }
     </style>
 </head>
 <body>
@@ -26,23 +31,26 @@
             <option value="">选项五</option>
             <option value="">选项六</option>
         </select>
-        <div>选中全部添加到右边&gt;&gt;</div>
-        <div>全部添加到右边&gt;&gt;</div>
+        <div id="releft" class="btn">选中全部添加到右边&gt;&gt;</div>
+        <div id="reallleft" class="btn">全部添加到右边&gt;&gt;</div>
     </div>
     
     <div class="right">
         <select name="" id="sel2" multiple="multiple">
             <option value="">选项七</option>
         </select>
-        <div>选中全部添加到左边&lt;&lt;</div>
-        <div>全部添加到左边&lt;&lt;</div>
+        <div  id="reright" class="btn">选中全部添加到左边&lt;&lt;</div>
+        <div id="reallright" class="btn">全部添加到左边&lt;&lt;</div>
     </div>
     
 
     <script>
         var sel1 = document.querySelector("#sel1");
         var sel2 = document.querySelector("#sel2");
-
+        var  releft = document.querySelector("#reallleft");
+        var  reright = document.querySelector("#reallright");
+        var rel = document.querySelector("#releft");
+        var rer = document.querySelector("#reright");
         // 双击移动事件
         sel1.ondblclick = function(){
             var loption = this.querySelectorAll("option");
@@ -56,6 +64,43 @@
             sel1.appendChild(loption[this.selectedIndex]);
         }
 
+        // 全部移动
+        releft.onclick = function(){
+            sel2.innerHTML += sel1.innerHTML;
+            sel1.innerHTML="";
+        }
+
+        reright.onclick = function(){
+            sel1.innerHTML += sel2.innerHTML;
+            console.log(sel2.innerHTML);
+            sel2.innerHTML="";
+        }
+
+        // 移动选中的选项
+
+        rel.onclick = function(){
+            // console.log(111);
+            var thisop = sel1.querySelectorAll("option");
+            console.log(thisop);
+            for(var i=0;i<thisop.length;i++){
+                console.log(111);
+                if(thisop[i].selected){
+                    sel2.appendChild(thisop[i]);
+                }
+            }
+        }
+
+        rer.onclick = function(){
+            // console.log(111);
+            var thisop = sel2.querySelectorAll("option");
+            console.log(thisop);
+            for(var i=0;i<thisop.length;i++){
+                console.log(111);
+                if(thisop[i].selected){
+                    sel1.appendChild(thisop[i]);
+                }
+            }
+        }
     </script>
 </body>
 </html>
