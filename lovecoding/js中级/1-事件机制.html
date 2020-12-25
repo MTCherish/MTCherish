@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            width: 600px;
+            height: 600px;
+            background-color: red;
+        }
+        .div2{
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+        }
+        .div3{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="div2">
+            <div class="div3">
+            </div>
+        </div>
+    </div>
+    <script>
+        var div1 = document.querySelector(".div1");
+        var div2 = document.querySelector(".div2");
+        var div3 = document.querySelector(".div3");
+
+        // div1.onclick = function(){
+        //     console.log("div1");
+        // }
+        // div2.onclick = function(){
+        //     console.log("div2");
+        // }
+        // div3.onclick = function(){
+        //     console.log("div3");
+        // }
+        // 当点击 3 的时候 会出现 3 2 1 这是一种事件冒泡 
+
+
+        div1.addEventListener("click",function(){
+            console.log("div1");
+        },true)
+        div2.addEventListener("click",function(){
+            console.log("div2");
+        },true)
+        div3.addEventListener("click",function(){
+            console.log("div3");
+        },true)
+
+        // 单独用addEventListener 用两个参数和 通过on 绑定的机制是一样的
+        // 第三个参数是来判断是捕获还是冒泡的   true是捕获  false是冒泡
+
+        // 事件捕获和事件冒泡
+        // 事件捕获是从外向内   先触发父元素直到找到  
+        // 事件冒泡是从内向外的   从当前元素一层一层往外
+
+        // 执行顺序是先捕获后冒泡
+        // 执行顺序：  捕获阶段-》目标阶段-》冒泡阶段
+
+
+        
+        div1.addEventListener("click",function(){
+            console.log("div1");
+        },false)
+        div2.addEventListener("click",function(event){
+            console.log("div2");
+            event.stopPropagation();//阻止冒泡行为
+
+            // event.preventDefault();//阻止浏览器默认行为
+        },false)
+        div3.addEventListener("click",function(){
+            console.log("div3");
+        },false)
+    </script>
+    
+</body>
+</html>

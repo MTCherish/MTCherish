@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <button id="btn">添加</button>
+    <script>
+        var oul = document.querySelector("ul");
+        var oli = document.querySelectorAll("li");
+        var btn = document.querySelector("#btn");
+        var num = 6;
+
+        btn.onclick = function(){
+            // oul.innerHTML += "<li>"+(++num)+"</li>";    
+
+            var thisli = document.createElement("li");
+            thisli.innerText = ++num;
+            // console.log(thisli);
+            oul.appendChild(thisli);
+            // thisli.onclick = function(){
+            //     console.log(thisli.innerHTML);
+            // }
+        }
+
+        // for(var i = 0;i<oli.length;i++){
+        //     oli[i].onclick = function(){
+        //         console.log(this.innerText);
+        //     }
+        // }
+
+        // 以上比较耗费资源
+        // 可以考虑利用事件冒泡
+        
+        // 事件委托 利用冒泡机制 将子元素的事件委托给父元素进行
+        oul.onclick = function(event){
+            // event.target 是获得当前的事件对象 可能是当前元素的子元素也可能是当前绑定的元素
+            // console.log(event.target.innerText);
+
+            // event.currentTarget 永远等于的是绑定的那个事件的元素
+            // console.log(event.currentTarget);
+
+            if(event.target!=event.currentTarget){
+                console.log(event.target.innerText);
+            }
+            
+        }
+    </script>
+</body>
+</html>
