@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        select{
+            width: 150px;
+            height: 200px;
+        }
+        .left,.right{
+            float: left;
+            margin: 0 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <select name="" id="sel1" multiple="multiple">
+            <option value="">选项一</option>
+            <option value="">选项二</option>
+            <option value="">选项三</option>
+            <option value="">选项四</option>
+            <option value="">选项五</option>
+            <option value="">选项六</option>
+        </select>
+        <div>选中全部添加到右边&gt;&gt;</div>
+        <div>全部添加到右边&gt;&gt;</div>
+    </div>
+    
+    <div class="right">
+        <select name="" id="sel2" multiple="multiple">
+            <option value="">选项七</option>
+        </select>
+        <div>选中全部添加到左边&lt;&lt;</div>
+        <div>全部添加到左边&lt;&lt;</div>
+    </div>
+    
+
+    <script>
+        var sel1 = document.querySelector("#sel1");
+        var sel2 = document.querySelector("#sel2");
+
+        // 双击移动事件
+        sel1.ondblclick = function(){
+            var loption = this.querySelectorAll("option");
+            // console.log(sel1.selectedIndex); 
+            sel2.appendChild(loption[this.selectedIndex]);
+        }
+
+        sel2.ondblclick = function(){
+            var loption = this.querySelectorAll("option");
+            // console.log(sel2.selectedIndex); 
+            sel1.appendChild(loption[this.selectedIndex]);
+        }
+
+    </script>
+</body>
+</html>

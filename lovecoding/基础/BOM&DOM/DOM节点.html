@@ -12,6 +12,8 @@
         <h1>hello</h1>
         <!-- test -->
         <h1>world</h1>
+        <span id="one">1111</span>
+        <span id="two">222</span>
     </div>
 
     <script>
@@ -44,6 +46,34 @@
 
 
         // 获得整个文档部分是 document.documentElement
+
+
+        // appendChild()  是向后添加直接
+        // insertinto(x,y) 向x后插入y
+
+
+            var one = document.querySelector("#one");
+
+            console.log(one.parentNode);
+
+            // 这个返回的是父元素节点
+
+            console.log(one.parentElement);
+
+            // 返回的是父元素并且还得是html标签的
+
+            console.log(one.nextSibling);
+            // 返回下一个兄弟元素节点 可能是文本节点
+
+            console.log(one.nextElementSibling);
+            // 返回下一个兄弟元素节点还是html标签的
+
+
+            console.log(one.previousSibling);
+            // 返回上一个兄弟节点 可能是文本节点
+
+            console.log(one.previousElementSibling);
+            // 返回上一个兄弟节点 还得是html标签的
         
     </script>
 </body>
