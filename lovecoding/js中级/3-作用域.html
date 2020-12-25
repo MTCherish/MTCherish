@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var a = 10;
+        // function foo(){
+        //     var b = 10;
+        //     console.log(a);
+        // }
+        // foo();
+
+
+        // 作用域链的概念 作用域内的作用域链
+        // 作用域是以函数为间隔的 函数内叫局部 外部就是全局
+        var a = 10;
+        function foo(){
+            var a = 20;
+            function foo1(){
+                console.log(a);
+            }
+            foo1(); 
+        }
+        foo();
+    </script>
+</body>
+</html>

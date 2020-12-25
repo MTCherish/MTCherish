@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 变量提升 js执行前有解析过程 解析的时候 变量定义为放到最前面：当前作用域的最顶端 只是赋值的位置不变 
+        // 隐式定义是没有提升部分的
+        console.log(a);
+        var a = 10;
+
+
+        //函数也有提升效果  它会把函数定义提升到顶端
+        foo();
+        function foo(){
+            console.log("111");
+        }
+
+
+        // 函数和变量都有提升效果但是会有更高级
+        // 在提升的时候变量提升会更高级
+        console.log(a);
+        var a = 10;
+        function a(){
+            console.log(111);
+        }
+        a();
+    </script>
+</body>
+</html>
