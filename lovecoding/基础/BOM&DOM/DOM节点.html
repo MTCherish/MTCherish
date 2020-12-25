@@ -41,7 +41,7 @@
         // 这个属性直接就是返回的就是html标签 而是是所有的  返回的是一个HTMLCollection  类数组
         console.log(div1.children);
 
-        // 这个方法可以看这个 标签下室友有子元素 返回一个bool值 如果有true 不是就false
+        // 这个方法可以看这个 标签下是否有子元素 返回一个bool值 如果有true 不是就false
         console.log(div1.hasChildNodes());
 
 
@@ -49,7 +49,7 @@
 
 
         // appendChild()  是向后添加直接
-        // insertinto(x,y) 向x后插入y
+        // insertbefore(x,y) 向x插入到y前面 但是这个必须要有交换元素的父元素去操作他们
 
 
             var one = document.querySelector("#one");

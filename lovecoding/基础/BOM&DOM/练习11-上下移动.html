@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="box">
+        <div>
+            div1
+            <input class="upbtn" type="button" value="向上">
+            <input class="downbtn" type="button" value="向下">
+        </div>
+        <div>
+            div2
+            <input class="upbtn" type="button" value="向上">
+            <input class="downbtn" type="button" value="向下">
+        </div>
+        <div>
+            div3
+            <input class="upbtn" type="button" value="向上">
+            <input class="downbtn" type="button" value="向下">
+        </div>
+    </div>
+
+    <script>
+        var upbtn = document.querySelectorAll(".upbtn");
+        var downbtn = document.querySelectorAll(".downbtn");
+        var obox = document.querySelector(".box");
+
+        for(var i=0;i<upbtn.length;i++){
+            upbtn[i].onclick = function(){
+                var thispar = this.parentElement;
+                var thispre = thispar.previousElementSibling;
+                if(thispre){
+                    obox.insertBefore(thispar,thispre);
+                }
+            }
+            downbtn[i].onclick = function(){
+                var thispar = this.parentElement;
+                var thisnext = thispar.nextElementSibling;
+                if(thisnext){
+                    obox.insertBefore(thisnext,thispar);
+                }
+            }
+        }
+
+        // 熟悉 怎么获取父节点 兄弟节点 再就是Before那个函数
+
+    </script>
+</body>
+
+</html>
