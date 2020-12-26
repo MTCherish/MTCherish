@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 第一 创建XMLHttpRequset 对象
+        var xmlhttp;
+        if(window.XMLHttpRequest){//IE7+、Firefox、Chrome、Safari 以及 Opera）
+            xmlhttp = new XMLHttpRequest();
+        }else{
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+
+        // 第二 向服务器发送请求
+        xmlhttp.open("GET","./text.json",true);
+        xmlhttp.send();
+
+        // 第三 接受回调数据
+        xmlhttp.onreadystatechange = function(){
+            if(xmlhttp.readyState==4&&xmlhttp.status==200){
+                var obj = JSON.parse(xmlhttp.resopnseText);
+                console.log(obj);
+            }
+        }
+    </script>
+</body>
+</html>
