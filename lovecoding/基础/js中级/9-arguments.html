@@ -6,11 +6,14 @@
     <title>Document</title>
 </head>
 <body>
+    
     <script>
-        (function(){
-            console.log(111);
-        })();
-        // 目的：为了形成一个局部作用域
+        function foo (){
+            console.log(arguments);
+        }
+        foo(1,2,3,4,5)
+
+        // arguments可以获得一个类数组
     </script>
 </body>
 </html>

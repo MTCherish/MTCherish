@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+//     //1、写出下列输出结果
+//     var x = 10;
+//     function test(){
+//   　  this.x = 20
+//   　　console.log(this.x)
+//     }
+//     test()  //20
+
+
+//     //2、写出下列输出结果
+//     var name= "window"
+//     var obj = {
+//       name:"obj",
+//       func1 : function() {
+//         console.log(this.name);//obj
+//         (function(){
+//           console.log(this.name)//window
+//         })()
+//       }
+//     }
+//     obj.func1()
+
+
+//     //3、写出下列结果
+//     var name="the window";
+
+//     var object={
+//         name:"My Object", 
+//         getName:function(){ 
+//           return this.name;
+//       } 
+//     }
+
+//     console.log(object.getName());  // My Object
+//     console.log((object.getName)());   
+//     console.log((object.getName=object.getName)());
+
+//     var a = "abc";
+//     var obj = {
+//       a : 10,
+//       foo:function(){
+//         console.log(this.a);
+//       }
+//     }
+//     // obj.foo();
+//     var foo2 = obj.foo;
+//     foo2();
+
+//     if(a=2){
+
+//     }
+
+// //     var foo = function(){
+
+// //     }
+// //     foo()
+// //     (function(){
+
+// // })()
+
+//     //4、下列代码中当div的点击事件触发时输出的结果是？
+//     document.getElementById("div").onclick = function(){
+//       console.log(this)
+//     };
+
+
+//     //5、请写出下列代码运行结果
+//     var name = "window"
+//     var obj = {
+//       name:"obj"
+//     }
+//     window.setInterval(function(){
+//       console.log(this.name)
+//     }, 300)
+//     window.setInterval(function(){
+//       console.log(this.name)
+//     }.call(obj),300)
+
+//     //6、请补全下列代码
+//     function foo(){
+//       //补全此处代码实现每隔一秒输出 hello world
+//       return function(){
+//         console.log("hello world");
+//       }
+      
+//     }
+//     window.setInterval(foo(),1000);
+
+
+//     // 7、补全下列代码实现 1+2+3+4
+//     function add(c, d) {
+//       return this.a + this.b + c + d;
+//     }
+//     var obj = {
+//       a:1,
+//       b:2
+//     }
+//     add.apply(obj,[3,4]);
+//     // var a = 1;
+//     // var b = 2;
+//     // add(3,4)
+//     /*
+//       在此补全代码 以两种以上方法实现
+//     */
+    
+
+
+//     //8、写出下列输出结果
+//     function f(){
+//       return this.a;
+//     }
+
+//     var g = f.bind({a:"azerty"});
+//     console.log(g()); 
+
+//     var h = g.bind({a:'yoo'}); 
+//     console.log(h()); 
+//     // f.bind({a:"azerty"}).bind({a:'yoo'});
+
+//     var o = {a:10, f:f, g:g, h:h};
+//     console.log(o.f(), o.g(), o.h());
+
+
+    //9、补全下列代码
+    // var o = {prop: 10};
+
+    // function independent() {
+    //   return this.prop;
+    // }
+    // o.f = independent.bind(o);
+    // //在此补全代码
+    // console.log(o.f()); //  10
+
+    //9、补全下列代码
+    // var o = {prop: 10};
+
+    // function independent() {
+    //   return this.prop;
+    // }
+    // o.f = independent;
+    // //在此补全代码
+    // console.log(o.f()); //  10
+
+    // function sum(x,y){
+    //   if(arguments.length>=2){
+    //     return x + y;
+    //   }else{
+    //     return function(z){
+    //       return x + z
+    //     }
+    //   }
+    // }
+
+    // console.log(sum(2,3))//5
+    // console.log(sum(2)(3))//5
+
+
+
+
+
+
+    // 第五题 （快手）
+    var str1 = 123000 //321
+
+      // str1 = str1.toString();  //变成字符串
+      // str1 = str1.split("");  //变成数组
+      // str1 = str1.reverse();  //数组翻转
+      // str1 = str1.join("");  // 	把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔。
+      // str1 = parseInt(str1)  
+      str1 = parseInt(str1.toString().split("").reverse().join(""));
+
+      console.log(str1);
+
+    // var arr = [1,2,3,4,5,6];
+    // console.log(arr.reverse());
+
+
+
+
+    
+  </script>
+</body>
+</html>
