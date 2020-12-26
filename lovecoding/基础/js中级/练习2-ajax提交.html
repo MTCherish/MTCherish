@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./ajax.js"></script>
+</head>
+
+<body>
+
+    <input type="text" id="inp" value="test" placeholder="请输入值">
+    <button id="btn">提交</button>
+    <ul id="box">
+
+    </ul>
+    <script>
+        var btn = document.querySelector("#btn");
+        var inp = document.querySelector("#inp");
+        var oBox = document.querySelector("#box");
+
+
+        btn.onclick = function () {
+            console.log(inp.value);
+            ajaxPost("http://47.92.82.13:4000/insertOneLevel", { levelname: inp.value }, function (res) {
+                console.log(res)
+                getData()
+            })
+        }
+        //获取数据
+        function getData() {
+            ajaxGet("http://47.92.82.13:4000/showLevel", function (res) {
+                console.log(res.data);
+                oBox.innerHTML = "";
+                for (var i = res.data.length-1; i>=0; i--) {
+                    var liEle = document.createElement("li");
+                    liEle.innerText = res.data[i].levelname;
+                    oBox.appendChild(liEle)
+                }
+            })
+        }
+        getData();
+
+
+    </script>
+</body>
+
+</html>
