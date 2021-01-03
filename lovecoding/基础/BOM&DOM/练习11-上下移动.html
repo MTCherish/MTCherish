@@ -35,6 +35,7 @@
             upbtn[i].onclick = function(){
                 var thispar = this.parentElement;
                 var thispre = thispar.previousElementSibling;
+                console.log(thispre);
                 if(thispre){
                     obox.insertBefore(thispar,thispre);
                 }
@@ -48,7 +49,7 @@
             }
         }
 
-        // 熟悉 怎么获取父节点 兄弟节点 再就是Before那个函数
+        // 熟悉 怎么获取父节点 兄弟节点 再就是insertBefore那个函数
 
     </script>
 </body>

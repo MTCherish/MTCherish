@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* p:not(.abc) {
+            color: #f00;
+        } */
+        /* .box p:first-child{
+            color: red;
+        } */
+        /* .box p:nth-last-child(2){
+            color: red;
+        } */
+        .box p:last-of-type{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div>world</div>
+        <p>hello</p>
+        <p>你好</p>
+    </div>
+
+    <!-- <p class="abc">否定伪类选择符 E:not(s)</p>
+    <p id="abc">否定伪类选择符 E:not(s)</p>
+    <p class="abcd">否定伪类选择符 E:not(s)</p>
+    <p>否定伪类选择符 E:not(s)</p> -->
+
+</body>
+
+</html>

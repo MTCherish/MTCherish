@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            font-size: 45px;
+            text-align: center;
+            background-color: red;
+            transform-origin: top bottom;
+            margin: 0 auto;
+            line-height: 200px;
+            /* transition:  all 1s ease; */
+            transition-property: all;
+            transition-duration: 1s;
+            transition-timing-function: ease;
+            transition-delay: 1s;
+            /* 过度的属性   时间  效果  延时时间 */
+            /* 想给某个元素加一个过渡效果  如果想移入移走都有就加给那个元素 */
+        }
+        .box:hover{
+            transform: rotate(45deg);
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="box">你好</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            
+            position: relative;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* margin-top:-100px ;
+            margin-left: -100px; */
+            transform: translate(-50%,-50%);  /*-50%是想对与自己的  不知道高宽的情况下可以用*/
+
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- 定位的情况   
+
+        relative   相对于自己本应该出现的位置定位   
+        absolute   相对于已经定位的最近的祖先元素并且使用static以外的  会脱离文档流
+        static     相当于是默认的
+        fixed      相对于这个窗口进行定位                            会脱离文档流
+    
+    -->
+    <!-- 分为三种情况 -->
+
+    <!-- 第一种已知高宽 -->
+    <!-- 第二种未知高宽 -->
+     <!-- 第三种行元素 -->
+    <div class="box">
+        <div class="box1">
+            
+        </div>
+    </div>
+</body>
+</html>
