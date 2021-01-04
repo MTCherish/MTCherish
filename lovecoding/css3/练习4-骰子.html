@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .face {
+            float: left;
+            margin: 16px;
+            padding: 4px;
+            background-color: #e7e7e7;
+            width: 104px;
+            height: 104px;
+            box-shadow: inset 0 5px white, inset 0 -5px #bbb, inset 5px 0 #d7d7d7, inset -5px 0 #d7d7d7;
+            border-radius: 10%;
+        }
+
+        .face span {
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin: 4px;
+            background-color: #333;
+            box-shadow: inset 0 3px #111, inset 0 -3px #555;
+        }
+
+        .face1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .face2 {
+            display: inline-flex;
+
+            justify-content: space-between;
+
+        }
+
+        .face2 span:nth-child(2) {
+            align-self: flex-end;
+        }
+
+        .face3 {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .face3 span:nth-child(2) {
+            align-self: center;
+        }
+
+        .face3 span:nth-child(3) {
+            align-self: flex-end;
+        }
+
+        .face4 {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: space-between;
+            justify-content: center;
+        }
+
+        .face4 .f41 {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .face4 .f42 {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .face4 .f51 {
+            align-self: center;
+        }
+        .face6 {
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: space-between
+        }
+        .face6 .f61, .face6 .f62, .face6 .f63{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 一 -->
+    <div class="face face1">
+        <span></span>
+    </div>
+
+    <!-- 二 -->
+    <div class="face face2">
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- 三 -->
+    <div class="face face3">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- 四 -->
+    <div class="face face4">
+        <div class="f41">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="f42">
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+    <!-- 五 -->
+    <div class="face face4">
+        <div class="f41">
+            <span></span>
+            <span></span>
+        </div>
+        <span class="f51"></span>
+        <div class="f42">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- 六 -->
+    <div class="face face6">
+        <div class="f61">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="f62">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="f63">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
