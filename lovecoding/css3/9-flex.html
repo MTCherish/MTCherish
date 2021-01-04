@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        ul{
+            display: flex;
+            /* flex-direction: row-reverse; */
+            /* flex-wrap: wrap; */
+            /* justify-content: space-around; */
+            align-content:flex-start;
+            height: 1000px;
+        }
+        li{
+            /* width: 200px; */
+            flex-basis: 200px;
+            /* width: 25%; */
+            height: 200px;
+            background-color: red;
+            list-style: none;
+            font-size: 45px;
+            text-align: center;
+            line-height: 200px;
+            /* flex-grow: 1; */
+        }
+        li:nth-child(odd){
+            background-color: blue;
+        }
+        /* li:nth-child(2){
+            order: -1;
+            flex-grow: 2;
+        }
+        li:nth-child(1){
+            flex-grow:3;
+        }
+        li:nth-child(3){
+            flex-grow:1;
+        } */
+        /* li:nth-child(5){
+            flex-shrink: 0;
+        }
+        li:nth-child(6){
+            flex-shrink: 2;
+        } */
+
+        li:nth-child(5){
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html   精讲 -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+</body>
+</html>

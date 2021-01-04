@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: red;
+            font-size: 45px;
+            text-align: center;
+            line-height: 200px;
+            /* animation: foo 3s linear ; */
+            animation-name:foo;
+            animation-timing-function: linear;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes foo{
+            from{
+                transform:rotate(0deg);
+            }
+            to{
+                transform:rotate(360deg);
+            }
+        }
+        .box:hover{
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        hello
+    </div>
+
+    <!-- 动画和过度的区别
+        过度是通过某个事件触发来实现简单的从A到B的过程
+        动画是相当于可以实现一个相对复杂的过程可以自定义
+    -->
+</body>
+</html>

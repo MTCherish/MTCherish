@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            perspective: 1000px;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            border: 1px dashed black;
+            margin: 200px auto;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        img{
+            position: absolute;
+            width: 400px;
+            height: 200px;
+            transition: all 1s ease;
+
+        }
+        img:nth-child(1){
+            transform-origin: right bottom;
+            transform: rotate(45deg) ;
+            
+        }
+        img:nth-child(2){
+            transform-origin: right top;
+            transform: rotate(-45deg);
+        }
+        img:hover{
+            transform:translate3d(0,0,400px);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        
+            <img src="../基础/image/6.jpg" alt="">
+      
+        
+            <img src="../基础/image/7.jpg" alt="">
+      
+    </div>
+</body>
+</html>
