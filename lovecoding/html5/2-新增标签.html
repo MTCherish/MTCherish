@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #can{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header>hello</header>
+    <!-- <audio controls="controls" src="http://antiserver.kuwo.cn/anti.s?rid=MUSIC_82128154&response=res&format=mp3|aac&type=convert_url&br=128kmp3&agent=iPhone&callback=getlink&jpcallback=getlink.mp3"></audio>
+    <video src="./11.mp4" controls="controls"></video> -->
+    <canvas id="can" width="600" height="400"></canvas>
+    <script>
+        var oCan = document.getElementById("can");
+        var oContext = oCan.getContext("2d");
+
+        oContext.lineWidth=10;
+        oContext.strokeStyle="white"
+        oContext.beginPath();
+        oContext.moveTo(20,20);
+        oContext.lineTo(100,100);
+        oContext.stroke();
+
+
+    </script>
+</body>
+</html>
