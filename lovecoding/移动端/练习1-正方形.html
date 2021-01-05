@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            background-color: red;
+        }
+
+        /* .div1{
+            width: 50vw;
+            height: 50vw;
+        } */
+
+        /* .div1{
+            width: 50vh;
+            height: 50vh;
+        } */
+
+
+        /* .div1{
+            width: 50vw;
+        }
+        .div2{
+            padding-top: 100%;
+        }
+        会有字体挤下来 */
+
+
+        .div1 {
+            width: 50vw;
+            padding-bottom: 50%;
+            height: 0;
+        }
+
+        .div1 {
+            width: 50vw;
+            position: relative;
+        }
+        .div2{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <div class="div2">hello</div>
+    </div>
+</body>
+
+</html>
