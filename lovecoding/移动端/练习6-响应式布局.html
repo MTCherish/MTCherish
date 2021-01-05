@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+            height: 200px;
+        }
+
+        header,
+        nav,
+        footer {
+            width: 100%;
+            height: 100px;
+            background-color: khaki;
+            font-size: 45px;
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 100px;
+        }
+
+        .content {
+            display: flex;
+        }
+
+        article,
+        aside {
+            height: 400px;
+            align-items: center;
+            margin-bottom: 10px;
+            width: 0;
+            display: flex;
+        }
+
+        article {
+            flex-grow: 3;
+            background-color: blue;
+            margin-right: 10px;
+        }
+
+        aside {
+            flex-grow: 2;
+            background-color: red;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                flex-wrap: wrap;
+            }
+
+            article,aside {
+               
+                width: 100%;
+                margin-right: 0;
+                flex-grow: unset;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>头部</header>
+        <nav>导航</nav>
+        <div class="img-content">
+            <img src="../基础/image/6.jpg" alt="">
+        </div>
+        <div class="content">
+            <article>
+                <section>
+                    dfasihfnak ansfnakfn napfnklafn p; anfan a; nl;af;l naf; naln ;nfa
+                    nf;anlfk n;an l;n la;fa;l n,nafnal na nl; nal;nf lka;l 'nla fna nlaf nl;
+                    nalfn a nf;la n;ln nf an;an ;anl nl;an an flan snf a;l an ll;fann an nlkanfmn
+                    nfklan lvn;an vlan
+                    nmf;a n;a na; la margina nm;fnma; '
+                    n l;a n;na'
+                </section>
+            </article>
+            <aside>
+                <section>
+                    dfasihfnak ansfnakfn napfnklafn p; anfan a; nl;af;l naf; naln ;nfa
+                    nf;anlfk n;an l;n la;fa;l n,nafnal na nl; nal;nf lka;l 'nla fna nlaf nl;
+                    nalfn a nf;la n;ln nf an;an ;anl nl;an an flan snf a;l an ll;fann an nlkanfmn
+                    nfklan lvn;an vlan
+                    nmf;a n;a na; la margina nm;fnma; '
+                    n l;a n;na'
+                </section>
+            </aside>
+        </div>
+        <footer>页脚</footer>
+    </div>
+
+</body>
+
+</html>

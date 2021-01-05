@@ -9,17 +9,17 @@
             margin:0;
         }
 
-        .box{
-            display: flex;
-        }
+       .box{
+           margin-left: 200px;
+       }
         .left{
             width: 200px;
             height: 400px;
             background-color: blue;
-            margin-right: 5px;
+            float: left;
+            margin-left: -200px;
         }
         .right{
-            flex-grow: 1;
             height: 400px;
             background-color: red;
         }
@@ -29,7 +29,8 @@
 <body>
     <div class="box">
         <div class="left">left</div>
-        <div class="right">right</div>
+        <div class="right">right</div> 
     </div>
+     
 </body>
 </html>
