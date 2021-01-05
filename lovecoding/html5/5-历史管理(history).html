@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    
+    <script>
+        var oBtn = document.getElementById("btn");
+        var obj = {};
+
+        function getRanArr(){
+            var arr = [];
+            for(var i=0;i<4;i++){
+                arr.push( Math.floor(Math.random()*10));
+            }
+            return arr;
+        }
+
+        oBtn.onclick = function(){
+            var ran = Math.random().toString().substr(2);
+            var ranArr = getRanArr()
+            obj[ran]=ranArr;
+            history.pushState(ran,"");
+            console.log(ranArr);
+        }
+
+        window.onpopstate = function(e){
+            console.log(obj[e.state]);
+        }
+
+    </script>
+</body>
+</html>

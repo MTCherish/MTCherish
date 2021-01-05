@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li{
+            list-style: none;
+            float: left;
+            height: 50px;
+            width: 100px;
+            background-color: gray;
+            color: #fff;
+            text-align: center;
+            line-height: 50px;
+        }
+        .active{
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li data-name="first" class="active">first</li>
+        <li data-name="second">second</li>
+        <li data-name="third">third</li>
+
+        <!--  data- 后面是自己写的 这个后面的东西可以用个dataset获得整个对象  -->
+    </ul>
+    <script>
+
+        var ali = document.querySelectorAll("li");
+
+        for(var i =0;i<ali.length;i++){
+            ali[i].onclick = function(){
+                for(var j = 0 ;j<ali.length;j++){
+                    ali[j].className = "";
+                }
+                this.classList.add("active");
+                location.hash = this.dataset.name;
+            }
+        }
+        window.onhashchange = function(){
+            var thisHash = location.hash.substr(1);
+            for(var i = 0;i<ali.length;i++){
+                if(ali[i].dataset.name == thisHash){
+                    ali[i].className = "active";
+                }else{
+                    ali[i].className = "";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

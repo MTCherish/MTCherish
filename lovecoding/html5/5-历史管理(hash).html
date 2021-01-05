@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <script>
+        var oBtn = document.getElementById("btn");
+        var obj = {};
+        oBtn.onclick = function(){
+            var ran = Math.random().toString().substr(2);
+            location.hash = ran;
+            obj[ran]=getRanArr();
+        }
+
+        window.onhashchange = function(){
+            var thisHas = location.hash.substr(1);
+            for(var item in obj){
+                if(item == thisHas){
+                    console.log(obj[item]);
+                }
+            }
+        }
+
+        function getRanArr(){
+            var arr = [];
+            for(var i=0;i<4;i++){
+                arr.push( Math.floor(Math.random()*10));
+            }
+            return arr;
+        }
+
+        // var num = 2837483749;
+        // var obj = {};
+
+        // obj[num] = 123;
+        // console.log(obj);
+
+
+        // var obj = {
+        //     a:1,
+        //     b:2,
+        //     c:3,
+        //     d:4
+        // }
+
+        // for(var item in obj){
+        //     console.log(obj[item]);
+        // }
+    </script>
+</body>
+</html>

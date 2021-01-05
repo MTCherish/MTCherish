@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // 设置cookie
+        function setCookie(key,val,timer){
+            var now = new Date();
+            now.setDate(now.getDate()+timer);
+
+            document.cookie = key +"="+val+";expires="+now.toUTCString();
+        }
+        setCookie("username","test",1)
+        // 重名覆盖
+
+
+        // 获取cookie
+
+        setCookie("username","test",1)
+        setCookie("username1","test1",1)
+        setCookie("username2","test2",1)
+        setCookie("username3","test3",1)
+        function getCookie(key){
+            var cookies = document.cookie;
+            var arr = cookies.split(";");
+            for(var i = 0 ;i<arr.length ;i++){
+                arr[i] = arr[i].split("=");
+                if(arr[i][0].trim() == key){
+                    return arr[i][1];
+                }
+            }
+            console.log(cookies.split(";"));
+        }
+        console.log( getCookie("username1"));
+
+        // 删除cookie
+
+        function delCookie(key){
+            var now = new Date();
+            now.setDate = (now.getDate()-1);
+            document.cookie = key +"=null;expires"+now.toUTCString();
+        }
+        delCookie("username");
+       
+    </script>
+</body>
+</html>
