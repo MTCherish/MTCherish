@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <script>
+        var ali = document.querySelectorAll("li");
+
+        // 方法一 索引
+        // for(var i=0;i<ali.length;i++){
+        //     ali[i].index = i;
+        //     ali[i].onclick = function(){
+        //         console.log(this.index);
+        //     }
+        // }
+
+
+        // 方法二 闭包
+
+        // for(var i =0;i<ali.length;i++){
+        //     (function foo(index){
+        //         ali[i].onclick = function(){
+        //             console.log(index);
+        //         }
+        //     })(i)
+        // }
+
+        // 方法三 let
+
+        for(let i =0;i<ali.length;i++){
+            ali[i].onclick = function(){
+                console.log(i);
+            }
+        }
+
+    </script>
+</body>
+</html>
