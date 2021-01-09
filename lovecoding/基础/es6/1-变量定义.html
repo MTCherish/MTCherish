@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+    </ul>
+    <script>
+        var aLi = document.querySelectorAll("li");
+
+        // 方法一
+        // for(var i=0;i<aLi.length;i++){
+        //     aLi[i].index = i;
+        //     aLi[i].onclick = function(){
+        //         console.log(this.index);
+        //     }
+        // }
+
+        //方法二
+        // for(var i=0;i<aLi.length;i++){
+        //     (function(index){
+        //         aLi[i].onclick = function(){
+        //             console.log(index);
+        //         }
+        //     })(i)
+        // }
+
+        //方法三
+        // for(let i = 0;i<aLi.length;i++){
+        //     aLi[i].onclick = function(){
+        //         console.log(i);
+        //     }
+        // }
+
+
+        
+
+        // var a = 10;
+        // var a = 11;
+
+        // let a = 10;
+
+        // let a = 10;
+        // let a = 11;
+
+
+    
+
+        // console.log(a);
+        // var a = 10;
+
+        // console.log(a);
+        // let a = 10;
+
+        // var a = 11;
+        // function foo(){
+
+        //     console.log(a);
+        //     var a = 10;
+        // }
+        // foo()
+        // console.log(a);
+
+        // let a = 20;
+        // function foo(){
+        //     let a = 10;
+        // }
+        // foo();
+        // console.log(a);
+
+
+        // let a = 11;
+        // function foo(){
+        //     console.log(a);
+        //     let a = 10;
+        // }
+        // foo()
+        // console.log(a);
+
+        // if(true){
+        //     let a = 20;
+        // }
+        // console.log(a);
+
+        // function foo(){
+        //     var a = 10;
+        //     return function(){
+        //         console.log(++a);
+        //     }
+        // }
+
+        // var foo2 = foo();
+        // foo2();
+        // foo2();
+
+        // if(true){
+        //     let a = 10;
+        //     function foo(){
+        //         console.log(++a);
+        //     }
+        // }
+        // foo();
+        // foo();
+
+
+        // let a = 10;
+        // a = 20;
+        // console.log(a);
+
+        // const a = 10;
+        // a = 20;
+        // console.log(a);
+
+        // const obj = {
+        //     age : 20
+        // }
+        // const obj2 = {
+        //     school:"黑大"
+        // }
+        // // obj.age = 30;
+        // obj = obj2
+        // console.log(obj);
+
+        // const obj = {
+        //     age:20
+        // }
+        // Object.freeze(obj)
+        // obj.age = 30;
+
+        // console.log(obj);
+
+        
+        // const foo = function(){
+
+        // }
+
+        
+
+    </script>
+</body>
+</html>

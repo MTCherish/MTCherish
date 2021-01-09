@@ -36,21 +36,26 @@
         // let arr1 = deepClone(arr);
         // console.log(arr1);
 
-        let arr = [1, 2, 3, 5, 4, 3, [1, 2, ["hejn",12],3], ["hello"]];
+        let arr = [1, 2, 3, 5, 4, 3, [1, 2, ["hejn", 12], 3], ["hello"]];
 
-         function deepClone(arr) {
-            let temp = [];
-            for (var key in arr) {
-                if(Array.isArray(arr[key])){
-                    temp = [...temp,...deepClone(arr[key])];
-                }else{
-                    temp = [...temp,arr[key]];
+        function deepClone(arr) {
+            if (typeof arr === "object") {
+                let temp = [];
+                for (var key in arr) {
+                    if (Array.isArray(arr[key])) {
+                        temp = [...temp, ...deepClone(arr[key])];
+                    } else {
+                        temp = [...temp, arr[key]];
+                    }
                 }
+                return temp;
+            } else {
+                return arr;
             }
-            return temp;
+
         }
 
-         let arr1 = deepClone(arr);
+        let arr1 = deepClone(arr);
         console.log(arr1);
 
     </script>
