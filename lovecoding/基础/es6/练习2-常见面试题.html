@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- js 模拟 栈和 队列 -->
+
+    <script>
+        let temp = [1,2,2,3,4,1,2,5];
+        // 栈
+        temp.push(6);
+        temp.pop();
+        console.log(temp);
+
+        //队列 
+        temp.push(7);
+        temp.splice(0,1);
+        console.log(temp);
+
+    </script>
+
+
+    <!-- 数组去重 -->
+    <script>
+        let temp1 = [1,2,2,3,4,1,2,5];
+        let temp2= [];
+        for(let i = 0;i<temp1.length;i++){
+            if(temp2[temp1[i]]==undefined)
+                temp2[temp1[i]] = temp1[i];
+        }
+
+        console.log(temp2);
+
+        let temp3 = [];
+        for(let i = 0;i<temp2.length;i++){
+            temp3.push(temp2[i])
+        }
+       console.log(temp3);
+
+
+    </script>
+
+
+   <!-- 手动实现call  bind -->
+   <script>
+    // Array
+    // let arr = [];
+    // arr.push(1);
+    // console.log(arr);
+
+    // let num = "12";
+    // num.push(2)
+
+    // let arr = new Array(1,2);
+    // // console.log(Array.prototype);
+    // // console.log(arr.__proto__);
+
+    // Array.prototype.vip2 = function(){
+    //     console.log(this);
+    //     console.log("hello world");
+    // }
+    // arr.vip2()//"hello world"
+
+    // function Foo(){
+    //     console.log("hello")
+    // }
+    // Foo.prototype.test = function(){
+    //     console.log("test");
+    // }
+    // console.log(Foo.prototype);
+
+    // let foo2 = new Foo();
+    // foo2.test()
+
+    
+    Function.prototype.myCall = function(obj){
+      console.log(obj);
+    }
+    Function.prototype.myBind = function(){
+
+    }
+
+
+    let a = 20;
+    let obj = {
+        a:"hello"
+    }
+
+    function foo(){
+        console.log(this.a);
+    }
+    foo.myCall(obj)//hello
+    // let foo2 = foo.myBind();
+    // foo2()//hello
+
+
+</script>
+</body>
+</html>

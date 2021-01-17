@@ -18,19 +18,19 @@
             console.log(this.a);
             console.log(a+str1+str2);
         }
-        foo();// "world"
+        // foo();// "world"
 
         // 这个this指向的是window 也就是那个"world"
 
         foo.call(obj,1,2);
         // call方法可以改变当前的this指向  括号里第一个参数 第一个是谁指向的就是谁,后面开始的是传的参数
 
-        foo.apply(obj,[" abc ","123"])
+        // foo.apply(obj,[" abc ","123"])
         // 这个也可以改变this指向  第一个参数是一样的， 从第二个开始不一样
         // 第二个参数与是一个数组 
 
-        var temp = foo.bind(obj," 111");
-        temp();
+        // var temp = foo.bind(obj," 111");
+        // temp();
         // bind 也可以改变this指向 bind是先绑定但是不是立即执行 返回一个绑定好的函数,传参和call一样
         // bind 不能重复对一个函数进行连续绑定 只是默认为第一次绑定的时候的
     </script>
