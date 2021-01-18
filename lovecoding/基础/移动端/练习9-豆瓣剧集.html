@@ -139,7 +139,7 @@
         <div class="list-bar">
             <h2>国产剧</h2>
             <ul class="listtv">
-                <li class="list-item">
+                <!-- <li class="list-item">
                     <div class="li-left">
                         <img src="https://images.weserv.nl/?url=https://img3.doubanio.com/view/photo/m_ratio_poster/public/p2629861450.jpg" alt="">
                     </div>
@@ -156,25 +156,72 @@
                         </div>
                     </div>
 
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>
     <script>
+        var start = 0;
+        var total = 0;
+        var flag = true;
         var tvlist = document.querySelector(".listtv");
         function getDate(){
-            ajaxGet("https://bird.ioliu.cn/v2?url=https://m.douban.com/rexxar/api/v2/subject_collection/tv_domestic/items?start=0&count=18",function(res){
+            flag = false;
+            ajaxGet("https://bird.ioliu.cn/v2?url=https://m.douban.com/rexxar/api/v2/subject_collection/tv_domestic/items?start="+start+"&count=18",function(res){
                 let thisDate = res.subject_collection_items;
                 let ali = "";
+                total = res.total;
                 for(var i = 0;i<thisDate.length;i++){
-                   ali += "<li>" + thisDate[i].title + "</li>";
+                    ali += '<li class="list-item">'+
+                    '<div class="li-left">'+
+                        '<img src="https://images.weserv.nl/?url='+thisDate[i].cover.url+'" alt="">'+
+                    '</div>'+
+                    '<div class="li-right">'+
+                        '<h3>'+thisDate[i].title+' </h3>'+
+                        '<div class="rank">'+
+                            getRating(thisDate[i].rating)+
+                        '</div>'+
+                        '<div class="info">'+thisDate[i].info+'</div></div></li>'
                 }
                 tvlist.innerHTML += ali;
-                console.log(res.subject_collection_items);
-
+                start += 18;
+                flag = true;
+                // console.log(res.subject_collection_items);
             })
         }
-        getDate()
+
+       function  getRating(val){
+           var str = "";
+            if(val){
+                var num = Math.floor(Math.ceil(val.value)/2);
+                for(var i = 0 ;i<5;i++){
+                    if(i<num){
+                        str += '<span class="rating-star rating-full"></span>'
+                    }else{
+                        str += '<span class="rating-star rating-gray"></span>'
+                    }
+                }
+                str += '<span class="rating-num">'+val.value+'</span>';
+                return str;
+            }else{
+                return "暂无评分";
+            }
+        }
+        getDate();
+
+        window.onscroll = function(){
+            var oHtml = document.documentElement;
+            console.log(oHtml.scrollTop,oHtml.scrollHeight,oHtml.clientHeight);
+            // oHtml.scrollTop 滚动条距离顶部的距离
+            // oHtml.clientHeight 当前适口高度
+            // oHtml.scrollHeight 可滚动区域高度
+            if(oHtml.scrollTop + oHtml.clientHeight +10 > oHtml.scrollHeight){
+                if(flag && start <= total){
+                    getDate();
+                }
+               
+            }
+        }
     </script>
 </body>
 
