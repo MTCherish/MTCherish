@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <style>
+        /* #box p{
+
+        } */
+
+    </style>
+</head>
+<body>
+   
+
+    <input type="text" id="inp">
+    
+    <script>
+        // $("#inp").click(function(){
+        //     console.log("com");
+        // })
+        // $("#inp").keydown(function(){
+        //     console.log($("#inp").val())
+        // })
+
+        $("#inp").keyup(function(){
+            console.log($("#inp").val())
+            console.log(this.value);
+            console.log($(this).val());
+        })
+
+    </script>
+</body>
+</html>
