@@ -1,0 +1,38 @@
+{
+    "code": 101,
+    "message": "展示姓名成功",
+    "data": [
+        {
+            "jrid": 59,
+            "userName":"小张"
+        },
+        {
+            "jrid": 60,
+            "userName":"小李"
+        },
+        {
+            "jrid": 61,
+            "userName":"小王"
+        },
+        {
+            "jrid": 62,
+            "userName":"小赵"
+        },
+        {
+            "jrid": 63,
+            "userName":"小孙"
+        },
+        {
+            "jrid": 64,
+            "userName":"小周"
+        },
+        {
+            "jrid": 65,
+            "userName":"小陈"
+        },
+        {
+            "jrid": 78,
+            "userName":"小魏"
+        }
+    ]
+}

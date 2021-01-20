@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .box{
+            width: 300px;
+            height: 200px;
+            border: black solid 1px;
+            text-align: center;
+        }
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .top{
+            background-color:black; 
+        }
+        .top ul li{
+            /* display: inline-block; */
+            float: left;
+            color: white;
+            height: 50px;
+            width: 100px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .top .active {
+            background-color: #ddd;
+            color: #000;
+        }
+        .bottom ul{
+            display: none;
+        }
+        .bottom .active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="top">
+            <ul class="clearfix">
+                <li >第一节课</li>
+                <li>第二节课</li>
+                <li>第三节课</li>
+            </ul>
+        </div>
+        <div class="bottom">
+            <ul>
+                <li>第一节课内容</li>
+                <li>第一节课内容</li>
+                <li>第一节课内容</li>
+            </ul>
+            <ul>
+                <li>第二节课内容</li>
+                <li>第二节课内容</li>
+                <li>第二节课内容</li>
+            </ul>
+            <ul>
+                <li>第三节课内容</li>
+                <li>第三节课内容</li>
+                <li>第三节课内容</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>

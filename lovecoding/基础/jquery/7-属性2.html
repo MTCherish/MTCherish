@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="aaa" id="test">hello</div>
+    <button>按钮</button>
+    <script>
+        $("button").click(function(){
+
+            $("#test").toggleClass("active");    
+
+            // if($("#test").hasClass("active")){
+            //     $("#test").removeClass("active");
+            // }else{
+            //     $("#test").addClass("active");
+            // }
+
+            // $("#test").addClass("active");
+            // $("#test").removeClass("active");
+            // $("div").hasClass("aaa").css("color","blue");
+
+        })
+    </script>
+</body>
+</html>
