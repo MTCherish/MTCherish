@@ -1,0 +1,1 @@
+console.log("hello world"),console.log("nihao"),console.log("2222");

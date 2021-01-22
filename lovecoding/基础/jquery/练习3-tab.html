@@ -79,6 +79,9 @@
       $(".nav-ul li").click(function() {
           $(this).addClass("active").siblings("li").removeClass("active");
           $(".content ul:eq("+$(this).index()+")").addClass("active").siblings("ul").removeClass("active");
+        //   $(this).addClass("active")
+
+        // 返回的是 那个元素
       })
   </script>
 </body>
