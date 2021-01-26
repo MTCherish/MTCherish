@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app" v-text="str"></div>
+    <script>
+        new Vue({
+            el:"#app",
+            // 挂载点相匹配
+
+            data:{
+                str:"1111"
+            }
+
+            // 数据项都在data里面  
+        })
+
+        app.str  = "22";
+        // 而且还可以用个这种对象的方式进行改变
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+.div1{
+    color: red;
+    width: 200px;
+    height: 200px;
+    background-image: url(../image/1.jpg);
+}
+::placeholder{
+    color: red;
+}
