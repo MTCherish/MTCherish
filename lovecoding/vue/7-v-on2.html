@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <style>
+        .div1{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+        .div2{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <a href="https://www.baidu.com" @click.prevent="clickHandle3">百度</a>
+        <div class="div1" v-on:click.self="clickHandle1">
+            <!-- <div class="div2" v-on:click="clickHandle2($event,1)"></div> -->
+            <!-- <div class="div2" v-on:click.stop="clickHandle2(1)"></div> -->
+            <div class="div2" @click="clickHandle2(1)"></div>
+            <input type="text" @keyup.enter="clickHandle4">
+        </div>
+    </div>
+
+
+    <script>
+
+        new Vue({
+
+            el:"#app",
+            data:{
+
+            },
+            methods:{
+                clickHandle1(){
+                    console.log("clickHandle1");
+                },
+                clickHandle2(num){
+                    // event.stopPropagation();
+                    console.log(num);
+                },
+                clickHandle3(event){
+
+                    // 传 原生的 event 
+                    // event.preventDefault();
+                },
+                clickHandle4(event){
+                    // if(event.keyCode == 13){
+                    //     console.log("回车");
+                    // }
+                    console.log("回车");
+                }
+            }
+        })
+    </script>
+    <!-- 
+         .stop - 阻止冒泡
+         .prevent - 阻止默认事件
+         .capture - 阻止捕获
+         .self - 只监听触发该元素的事件
+         .once - 只触发一次
+         .left - 左键事件
+         .right - 右键事件
+         .middle - 中间滚轮事件 
+    -->
+</body>
+</html>

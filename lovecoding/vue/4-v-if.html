@@ -9,7 +9,9 @@
 <body>
     <div id="app">
         <ul>
-            <li>衣服<span v-show="goods1!=0">：{{goods1}}</span><span v-show="goods1==0">售空</span></li>
+            <li>衣服
+                <span v-if="goods1!=0">：{{goods1}}</span>
+                <span v-else>售空</span></li>
             <li>鞋子：{{goods2}}</li>
             <li>帽子：{{goods3}}</li>
         </ul>
@@ -28,7 +30,7 @@
             }
         })
 
-        // v-show 是判断条件成立的时候才显示当前标签下的内容  如果不是 是把标签display = none 与接下来的if是不同的
+        //v-if 是没有这个标签 ，如果条件成立就加上这个标签  不成立就不加上   用法几乎和 if -else if -else 一样
     </script>
 </body>
 </html>
