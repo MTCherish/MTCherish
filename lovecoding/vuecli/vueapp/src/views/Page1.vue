@@ -1,22 +1,31 @@
 <template>
     <div>
-        <h1>页面1</h1>
-        <h1>{{$route.params.username}}</h1>
+        <h1>这里是页面一{{num}}</h1>
+        <h1>用户名：{{$route.params.username}}</h1>
+        <button @click="addHandle">add</button>
     </div>
 </template>
-
-<script lang="ts">
-    import Vue from 'vue'
-    export default Vue.extend({
-        data(){
-            return {
-
-            }
+<script>
+export default {
+    data() {
+        return {
+            num:1
         }
-        ,
-        created(){
-            console.log(this.$route.params.username);
-            
-        }
-    })
+    },
+    created() {
+        console.log(this.$route);
+    },  
+    activated() {
+        console.log("com");
+    },
+    deactivated() {
+        console.log("leave");
+    },
+    methods: {
+       addHandle(){
+           ++this.num
+       }
+    },  
+
+}
 </script>

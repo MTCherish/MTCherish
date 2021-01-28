@@ -16,6 +16,8 @@
         ,
         created(){
             console.log(this.$route.params.username);
+            console.log(this.$route);
+            console.log(this.$router);
             
         }
     })

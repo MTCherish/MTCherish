@@ -9,12 +9,16 @@
       <router-link :to="{name:'PageTwo',query:{username:'小马1'}}">页面2</router-link> |
       <router-link to="/pagethree/小马2">页面3</router-link> |
       <router-link to="/redir/小马2">重定向</router-link> |
-      <router-link to="/pt">别名</router-link>
+      <router-link to="/pt">别名</router-link> |
+       <router-link to="/pagefour">页面四</router-link> |
+       <router-link to="/pagefive">页面五</router-link> |
       <button @click="goHandle">编程式导航</button>
     </div>
     <div class="box">
       <transition name="fade">
+        <keep-alive>
         <router-view/>
+        </keep-alive>
       </transition>
     </div>
   </div>
@@ -33,12 +37,27 @@
         //   }
         // })
 
-        this.$router.push({
-          path:"pagetwo",
+        // this.$router.push({
+        //   path:"pagetwo",
+        //   query:{
+        //     username:"bbbbbb"
+        //   }
+        // })
+
+
+        this.$router.replace({
+          path:"/pagetwo",
           query:{
-            username:"bbbbbb"
+            username:"1212313"
           }
         })
+
+        // 这个只是重定向 不会进入历史管理
+
+        // this.$router.go(-2)
+      
+      // this.$route   当前对象的东西
+      // this.$router   所有的东西
 
       }
     }
