@@ -60,6 +60,11 @@ const routes = [
     path:"/pagefive",
     name:"PageFive",
     component: () => import('../views/Page5.vue')
+  },
+  {
+    path:"/tvdetail/:id",
+    name:"Detail",
+    component: () => import('../views/tvdetail.vue')
   },{
     path:'*',
     component: () => import('../views/Error.vue')

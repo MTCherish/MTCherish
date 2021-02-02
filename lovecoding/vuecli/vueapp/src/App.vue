@@ -15,11 +15,11 @@
       <button @click="goHandle">编程式导航</button>
     </div>
     <div class="box">
-      <transition name="fade">
+      <!-- <transition name="fade"> -->
         <keep-alive>
         <router-view/>
         </keep-alive>
-      </transition>
+      <!-- </transition> -->
     </div>
   </div>
 </template>
