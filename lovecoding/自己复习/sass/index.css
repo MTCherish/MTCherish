@@ -1,0 +1,187 @@
+#div1 {
+  color: blue;
+  border: 1px solid black;
+}
+
+#div1 #div2 {
+  color: black;
+}
+
+#header {
+  color: black;
+  border-left: blue 1px solid;
+  border-right: blue;
+}
+
+#header-top {
+  color: blue;
+}
+
+#header:hover {
+  border: black;
+}
+
+.div3 {
+  color: blue;
+}
+
+.div4 {
+  border: 1px;
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+}
+
+.div5 {
+  margin: 10px;
+  width: 200px;
+  height: 200px;
+  background-color: blue;
+}
+
+.div6, .div7 {
+  margin: 10px;
+  background-color: #fff;
+  height: 100px;
+}
+
+.div7 {
+  border: 1px;
+}
+
+* {
+  margin: 10px;
+}
+
+li {
+  list-style: none;
+}
+
+.div8 {
+  height: 220px;
+  width: 5.8px;
+  height: 6px;
+  margin: 6px;
+  padding: 5px;
+  width: 10%;
+  background: url("/src/base/XXX.PNG");
+}
+
+.div9 {
+  color: #fc0000;
+  color: red;
+}
+
+.div10 {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  color: yellow;
+}
+
+.div11 {
+  background-color: red;
+}
+
+.div12 {
+  color: blue;
+}
+
+.test-0 {
+  width: 0px;
+}
+
+.test-1 {
+  width: 10px;
+}
+
+.test-2 {
+  width: 20px;
+}
+
+.test-3 {
+  width: 30px;
+}
+
+.test-4 {
+  width: 40px;
+}
+
+.test-5 {
+  width: 50px;
+}
+
+.test-6 {
+  width: 60px;
+}
+
+.test-7 {
+  width: 70px;
+}
+
+.test-8 {
+  width: 80px;
+}
+
+.test-9 {
+  width: 90px;
+}
+
+.red-test {
+  color: red;
+}
+
+.blue-test {
+  color: blue;
+}
+
+.green-test {
+  color: green;
+}
+
+.yellow-test {
+  color: yellow;
+}
+
+.box-0 {
+  width: 0px;
+}
+
+.box-1 {
+  width: 100px;
+}
+
+.box-2 {
+  width: 200px;
+}
+
+.box-3 {
+  width: 300px;
+}
+
+.box-4 {
+  width: 400px;
+}
+
+.box-5 {
+  width: 500px;
+}
+
+.box-6 {
+  width: 600px;
+}
+
+.box-7 {
+  width: 700px;
+}
+
+.box-8 {
+  width: 800px;
+}
+
+.box-9 {
+  width: 900px;
+}
+
+.div13 {
+  color: yellow;
+}

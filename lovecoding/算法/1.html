@@ -4,21 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-       .box{
-           border-top:100px solid red ;
-           width: 100px;
-           height: 100px;
-           border-bottom: 100px solid greenyellow;
-           border-left: 100px solid blue;
-           border-right: 100px solid black;
-       }
-    </style>
+   
 </head>
 <body>
-    <div class="box">
-      
-    </div>
+   <script>
+       var CheckPermutation = function(s1, s2) {
+    var x1 = {} , x2 = {}; 
+    for(var i = 0;i<s1.length;i++){
+            var x = s1[i];
+            x1.x++;
+        
+        
+        
+   }
+   for(var i = 0 ;i<s2.length ; i++){
+   
+            x2.s2[i]++;
+        
+   }
+   console.log(x1,x2);
+//    if(x1.length!=x2.length){
+//        return false;
+//    }else{
+//        for(var i = 0;i<x1.length;i++){
+//            if(x1[i]!=x2[x1[i]]){
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+};
+console.log(CheckPermutation("abc","bad"));
+   </script>
     
 </body>
 </html>

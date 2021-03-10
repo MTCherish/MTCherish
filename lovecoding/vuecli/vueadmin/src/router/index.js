@@ -197,7 +197,25 @@ export const constantRoutes = [
       }
     ]
   },
-
+  {
+    path: '/information',
+    component: Layout,
+    meta: { title: '信息', icon: 'form' },
+    children: [
+      {
+        path: 'informationlist',
+        name: 'InformationList',
+        component: () => import('@/views/information/list'),
+        meta: { title: '列表', icon: 'form' }
+      },
+      {
+        path: 'informationadd',
+        name: 'InformationAdd',
+        component: () => import('@/views/information/add'),
+        meta: { title: '添加', icon: 'form' }
+      }
+    ]
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

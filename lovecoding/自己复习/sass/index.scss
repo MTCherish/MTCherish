@@ -1,0 +1,147 @@
+$col:blue;
+#div1{
+    color: $col;
+    border: 1px solid black;
+    #div2{
+        color: black;
+    }
+}
+
+#header{
+    color: black;
+    &-top{
+        color: $col;
+    }
+    &:hover{
+        border: black;
+    }
+    border: {
+        left: $col 1px solid;
+        right: $col;
+    };
+}
+
+$keyname:"color";
+.div3{
+    #{$keyname}:$col
+}
+
+@mixin foo($num,$coll:yellow) {
+    width: $num;
+    height: $num;
+    background-color: $coll;
+}
+.div4{
+    border: 1px;
+    // @include foo(100px);
+    @include foo($num:100px)
+}
+.div5{
+    margin: 10px;
+    @include foo(200px,blue)
+}
+
+.div6{
+    margin: 10px;
+    background-color: #fff;
+    height: 100px;
+}
+
+.div7{
+    @extend .div6;
+    border: 1px;
+}
+
+@import "./base.scss";
+
+$hnum:100px;
+$fnum:5.8px;
+$str:"xxx.png";
+.div8{
+    height: ($hnum + 10px) / 10 *20;
+    width: abs($fnum);
+    height: round($fnum);
+    margin: ceil($fnum);
+    padding: floor($fnum);
+    width: percentage(0.1);
+    background: url("/src/base/"+to-upper-case($str));
+}
+
+
+$color1:rgb(255,0,0);
+$color2:rgba(0,255,0,.3);
+.div9{
+    color:darken($color1, $amount: 0.5);
+    color:opacify($color1, $amount: .2);
+}
+
+$list1:1px solid black;
+$list2:red blue yellow green;
+.div10{
+    border: {
+        right: $list1;
+        left: $list1;
+    };
+    color:nth($list2 , 3 );
+}
+
+$map1:(color:red,font-size:10px);
+
+.div11{
+    background-color: map-get($map1, color);
+}
+
+$bnum:10;
+
+.div12{
+    @if($bnum<5){
+        color: red;
+    }@else{
+        color: blue;
+    }
+}
+
+
+// @for $i from 0 through 10{
+//     .test-#{$i}{
+//         width: $i*10px;
+//     }
+// }
+// 包含10
+
+@for $i from 0 to 10{
+    .test-#{$i}{
+        width: $i*10px;
+    }
+}
+// 不包含10
+
+$list3:red blue green yellow;
+@each $val in $list3{
+    .#{$val}-test{
+        color:$val;
+    }
+}
+
+$i:0;
+@while $i<10 {
+    .box-#{$i}{
+        width: $i*100px;
+    }
+    $i:$i + 1;
+}
+
+
+@function foo1($val){
+    @if($val>10){
+        @return red;
+    }@else if($val>5 and $val<=10){
+        @return yellow;
+    }@else{
+        @return green;
+    }
+}
+
+.div13{
+    color:foo1(9) ;
+}
