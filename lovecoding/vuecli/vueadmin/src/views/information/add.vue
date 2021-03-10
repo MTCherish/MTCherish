@@ -119,7 +119,7 @@ export default {
   methods: {
     initupdate(id) {
       this.isupdate = true;
-      let _date = 
+      // let _date = 1;
     },
     sfileSuccess(response) {
       this.ruleForm.tcoin = response.headerurl;
