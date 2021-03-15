@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = ["xiaoming","xiaogang"];
+        // let name1 = arr[0];
+        // let name2 = arr[1];
+        // let [name1,name2] = arr;
+        // console.log(name1,name2);
+
+        // let obj = {
+        //     a:"1",
+        //     b:"2",
+        //     c:"3"
+        // }
+        // let a = obj.a;
+        // let b = obj.b;
+
+        // let {a:num1,c,b} = obj;
+        // console.log(num1,b,c);
+
+        // let str = "hello";
+
+        // let [a,b,c] = str;
+        // console.log(a,b,c);
+
+        // function foo({name:sname,age}){
+        //     // let sname = obj.name;
+        //     console.log("姓名:"+sname);
+        //     console.log("年龄:"+age);
+
+        // }
+        // foo({
+        //     name:"小明",
+        //     age:20
+        // })
+
+        // function foo(){
+        //     return {
+        //         age:20,
+        //         school:"黑大"
+        //     }
+        // }
+        // let {age,school} = foo();
+        // console.log(age,school);
+
+        let a = 10;
+        let b = 20;
+
+        // 方法一
+        // let temp = a + b;
+        // a = b;
+        // b = temp - a;
+
+        // 方法二
+        // a = [b,b=a][0]
+
+        // 方法三
+        [a,b] = [b,a];
+
+        console.log(a,b);
+
+    </script>
+</body>
+</html>
