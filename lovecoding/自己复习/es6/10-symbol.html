@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let school = Symbol("key1");
+        console.log(school);
+
+        let obj = {
+            age:20,
+            sName:"小明"
+        }
+        obj[school] = "黑大";
+        console.log(obj);
+
+        for(let key in obj){
+            console.log(key);
+        }
+        console.log(obj[school]);
+
+
+        //新的原始数据类型Symbol，表示独一无二的值。可以保证不会与 其他属性名产生冲突
+
+        //该属性不会出现在for...in、for...of循环中
+    </script>
+</body>
+</html>

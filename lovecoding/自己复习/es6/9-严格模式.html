@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // a = 3;
+
+        // var a = 4;
+        // var a = 5;
+
+        // 'use strict'
+        // 'use strict'
+
+        // var a = 3;
+        // console.log(a);
+
+        //禁止this关键字指向全局对象 构造函数必须new 
+        // 'use strict'
+        // var a = 3;
+        // function foo(){
+        //     console.log(this.a);
+        // }
+        // foo()
+
+        // 'use strict'
+        // function Foo(age){
+        //     this.age = age;
+        // }
+        // var foo2 = Foo(18);
+        // console.log(foo2);
+
+
+        //函数不能有重名的参数 
+        // 'use strict'
+        // function foo(a,a){
+        //     console.log(a);
+        // }
+        // foo(1,2);
+
+
+        //禁止使用with语句 
+        // var obj = {
+        //     age:18
+        // }
+        // with(obj){
+        //    console.log(age); 
+        // }
+
+
+        //arguments.callee()  相当于是递归 
+        // 'use strict'
+        // var num = 1;
+        // function foo(){
+        //     console.log(++num);
+        //     if(num<30){
+        //         // foo()
+        //         arguments.callee()
+        //     }
+        // }
+        // foo();
+
+        // function foo(){
+        //     'use strict'
+        //     a = 10;
+        //     console.log(a);
+        // }
+        // foo()
+        
+        
+    </script>
+</body>
+</html>
