@@ -1,0 +1,38 @@
+{
+    "code": 101,
+    "message": "展示职位成功",
+    "data": [
+        {
+            "jrid": 59,
+            "levelname": "支行副行长"
+        },
+        {
+            "jrid": 60,
+            "levelname": "业务主管"
+        },
+        {
+            "jrid": 61,
+            "levelname": "业务副主管"
+        },
+        {
+            "jrid": 62,
+            "levelname": "高级柜员"
+        },
+        {
+            "jrid": 63,
+            "levelname": "中级柜员"
+        },
+        {
+            "jrid": 64,
+            "levelname": "普通柜员"
+        },
+        {
+            "jrid": 65,
+            "levelname": "实习生"
+        },
+        {
+            "jrid": 78,
+            "levelname": "水质监测员"
+        }
+    ]
+}
