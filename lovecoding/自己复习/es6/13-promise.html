@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <script>
+        // 回调地狱
+        // $.get("./data/a.json", function (res) {
+        //     console.log(res);
+        //     $.get("./data/b.json", function (res) {
+        //         console.log(res);
+        //         $.get("./data/c.json", function (res) {
+        //             console.log(res);
+        //         })
+        //     })
+        // })
+
+        // 在请求的时候不能控制请求的顺序 所以用promise 
+
+        // promise 里面有两个参数第一个参数是成功的意思  第二个参数是失败的意思  在不同时候调用会分别进入  then  catch 里面
+
+        // let promise1 = new Promise(function(resolve,reject){
+        //     setTimeout(function(){
+        //         console.log(1);
+        //         // resolve('hello')
+        //         reject()
+        //         console.log(promise1);
+        //     },2000)
+        // })
+
+        // console.log(promise1);
+        // promise1.then(function(res){
+        //     console.log(res);
+        // }).catch(function(){
+        //     console.log("erro");
+        // })
+
+        // function getData(url) {
+        //     let promise1 = new Promise(function (resolve, reject) {
+        //         $.get(url, function (res) {
+        //             resolve(res)
+        //         })
+        //     })
+        //     return promise1
+        // }
+        // getData("./data/a.json").then(function (res) {
+        //     console.log(res);
+        //     return getData("./data/b.json")
+        // }).then(function(res) {
+        //     console.log(res);
+        //     return getData("./data/c.json")
+        // }).then(function(res){
+        //     console.log(res);
+        // })
+        
+        
+
+        // then  和 catch 也可以同时写  例如下面
+        // let promise1 = new Promise(function(resolve,reject){
+        //     setTimeout(function(){
+        //         reject()
+        //     },2000)
+        // })
+
+        // promise1.then(function(res){
+        //     console.log(res);
+        // },function(res){
+        //     console.log("error");
+        // })
+
+
+        let promise1 = new Promise(function(resolve,reject){
+            $.get("./data/a.json",function(res){
+                console.log(res);
+                // reject(res)
+            })
+        })
+        let promise2 = new Promise(function(resolve,reject){
+            $.get("./data/b.json",function(res){
+                console.log(res);
+                resolve(res)
+            })
+        })
+        let promise3 = new Promise(function(resolve,reject){
+            $.get("./data/c.json",function(res){
+                console.log(res);
+                resolve(res)
+            })
+        })
+
+        Promise.all([promise1,promise2,promise3]).then(function(res){
+            console.log(res,"成功！");
+        })
+
+        // Promise.race([promise1,promise2,promise3]).then(function(res){
+        //     console.log("come");
+        // }).catch(function(){
+        //     console.log("error");
+        // })
+
+        
+
+        // promise.all  和  promise.race 的区别是 all 必须是全部都是成功以后才触发 而 race 是有个成功就触发也会停在错误的上面
+
+        // Promise 是异步编程的一种解决方案，比传统的解决方 案————更合理和更强大。回调函数和事件
+
+
+    </script>
+</body>
+
+</html>
