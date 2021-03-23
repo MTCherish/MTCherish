@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <script>
+        // function* foo(){
+        //     console.log(1);
+        //     yield console.log(2);
+        //     console.log(3);
+        //     yield console.log(4);
+        // } 
+        // let foo2 = foo();
+        // foo2.next();
+        // foo2.next();
+
+        // function* foo(){
+        //     yield 'hello';
+        //     yield 'world';
+        //     return 'ending';
+        // }
+        // let foo2 = foo();
+        // console.log(foo2.next());
+        // console.log(foo2.next());
+        // console.log(foo2.next());
+
+
+        // yield表达式本身没有返回值，或者说总是返回undefined。next方法 可以带一个参数，该参数就会被当作上一个yield表达式的返回值。
+        // function* foo(x){
+        //     let y = 2 * (yield (x+1));
+        //     console.log(y);
+        //     let z =yield (y / 3);
+        //     console.log(x,y,z);
+        //     return (x + y + z);
+        // }
+        // let foo2 = foo(5);
+        // console.log(foo2.next());
+        // console.log(foo2.next(1));
+        // console.log(foo2.next(2));
+
+        function getData(url){
+            $.get(url,function(res){
+                foo2.next(res)
+            })
+        }
+
+        function* foo(){
+            console.log(yield getData("./data/a.json"));
+            console.log(yield getData("./data/b.json"));
+            console.log(yield getData("./data/c.json"));
+        }
+        let foo2 = foo();
+        foo2.next()
+    </script>
+</body>
+</html>
