@@ -20,11 +20,17 @@
 
         let a = 10;
         // render 就是渲染的意思 把什么东西渲染到哪里
+
+        function foo() {
+            console.log(111);
+            return "222"
+        }
         ReactDOM.render(
             <div>
                 <p>ksnanana</p>
                 <input type="text"/>  
                 {++a}  
+                {foo()}
             </div>,
             document.querySelector("#box")
         )

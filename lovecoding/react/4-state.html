@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+  
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+    
+      class Foo extends React.Component{
+          constructor(){
+              super()
+              this.state = {
+                  num:0
+              }
+          }
+          render(){
+              return (
+                <div>
+                    <h1>{this.state.num}</h1>
+                    <button onClick={() => {
+                        
+                        // 修改状态值  state
+
+                        this.setState({
+                            num:++this.state.num 
+                        })
+                    }}>点击</button>    
+                </div>
+              )
+          }
+      }
+
+
+      ReactDOM.render(
+          <Foo/>,
+          document.getElementById('root')
+      )
+    </script>
+</body>
+</html>
