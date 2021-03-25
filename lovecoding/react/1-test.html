@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+  
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+
+    <div id="box">
+
+    </div>
+    <script type='text/babel'>
+
+        let a = 10;
+        // render 就是渲染的意思 把什么东西渲染到哪里
+        ReactDOM.render(
+            <div>
+                <p>ksnanana</p>
+                <input type="text"/>  
+                {++a}  
+            </div>,
+            document.querySelector("#box")
+        )
+
+
+
+    </script>
+</body>
+</html>
