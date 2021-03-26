@@ -19,28 +19,59 @@
 
     <script type="text/babel">
 
-        class Foo extends React.Component{
-            constructor(){
+
+        // 父子组件传参数  父组件给子组件传参数 同属属性传过去 然后子组件通过 this.props 接受到一个对象，对象里面的key  val 就是参数
+
+        // 子组件想要改变父组件的 通过调用父组件的函数 并且加一个 箭头函数
+        class Foo extends React.Component {
+            constructor() {
                 super()
+                this.state = {
+                    num: 10
+                }
                 this.fn = this.fn.bind(this)
             }
-            fn(event){
-                console.log(event); 
-                console.log(event.target);
+            fn(target) {
+                let {num} = this.state
+                if(target === "+"){
+                    this.setState({
+                        num: ++num
+                    })
+                }else{
+                    this.setState({
+                        num: --num
+                    })
+                }
             }
-            render(){
+            render() {
+                
                 return (
                     <div>
-                        <input type="text" onChange={this.fn}/>
+                        <h2>父组件</h2>
+                        <Child name="xxx" temp={this.state.num} change={this.fn}/>
                     </div>
                 )
             }
         }
-     
 
-        // 事件 通过形参event 能取到事件对象 可以得到一些东西
+
+        class Child extends React.Component {
+            constructor() {
+                super()
+            }
+            render() {
+                const { name, temp ,change} = this.props;
+                console.log(this.props);
+                return (
+                    <div>
+                        <p>{name} ---- {temp} <button onClick={() =>{change("+")}}>+</button> <button onClick={() =>{change("-")}}>-</button></p>
+                    </div>
+                )
+            }
+        }
+
         ReactDOM.render(
-            <Foo/>,
+            <Foo />,
             document.getElementById('root')
         )
     </script>
