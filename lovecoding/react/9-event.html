@@ -19,30 +19,30 @@
 
     <script type="text/babel">
 
-        // 可以 通过 ref 获取元素
-        // ref 只能用类组件
-        class Foo extends React.Component {
-            constructor() {
+        class Foo extends React.Component{
+            constructor(){
                 super()
+                this.fn = this.fn.bind(this)
             }
-            render() {
+            fn(event){
+                console.log(event);
+                console.log(event.target);
+            }
+            render(){
                 return (
                     <div>
-                        <input type="text" ref="inp" />
-                        <button onClick={() => {
-
-                            // 通过 this.refs.inp 去获取
-                            console.log(this.refs.inp);
-                        }}>获取</button>
+                        <input type="text" onChange={this.fn}/>
                     </div>
                 )
             }
         }
+     
+
+        // 事件 通过形参event 能取到事件对象 可以得到一些东西
         ReactDOM.render(
-            <Foo />,
+            <Foo/>,
             document.getElementById('root')
         )
-
     </script>
 </body>
 

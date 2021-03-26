@@ -28,11 +28,12 @@
             render() {
                 return (
                     <div>
-                        <input type="text" ref="inp" />
+                        <input type="text" ref={(inp) =>{
+                            return this.myInput = inp
+                        }} />
                         <button onClick={() => {
-
-                            // 通过 this.refs.inp 去获取
-                            console.log(this.refs.inp);
+                            // 官方更推荐这个
+                            console.log(this.myInput.value);
                         }}>获取</button>
                     </div>
                 )
