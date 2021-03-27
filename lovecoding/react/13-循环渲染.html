@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+
+       
+        class Foo extends React.Component {
+            constructor() {
+                super()
+               this.list = [1,2,3,4]
+            }
+            render() {
+                //   循环渲染就是使用 map 对数组或者是对象进行遍历 将遍历的东西重新渲染
+                return (
+                    <ul>
+                        {
+                            this.list.map((val) => {
+                                return <li key={val}>{val}</li>
+                            })
+                        }
+                    </ul>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Foo />,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: red;
+        }
+
+        #boxid{
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+
+       
+        class Foo extends React.Component {
+            constructor() {
+                super()
+               
+            }
+            render() {
+                //   使用 类选择器的时候 class 会冲突 可以用 className
+                return (
+                    <div>
+                        <p id="boxid">hello world</p>
+                        <h2 className="box">hello world</h2>
+                        <h1 style={{backgroundColor: 'green'}}>hello world</h1>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Foo />,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+
+</html>
