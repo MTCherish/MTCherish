@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #box {
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .ok {
+            background-color: green;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+
+
+        class Main extends React.Component {
+            constructor() {
+                super()
+                this.state = {
+                    list: [{ name: "西红柿", price: 20, ischeck: false, ishow: true }, { name: "11", price: 20, ischeck: false, ishow: true }],
+                    total: 0,
+                }
+                this.add = this.add.bind(this)
+                this.dec = this.dec.bind(this)
+                this.addcheck = this.addcheck.bind(this)
+                this.search = this.search.bind(this)
+                this.decall = this.decall.bind(this)
+            }
+            add(name, price) {
+                let { list } = this.state;
+
+                list.push({ name, price, ischeck: false, ishow: true })
+                this.setState(
+                    {
+                        list: list
+                    })
+            }
+            dec(index,event) {
+
+                let { list } = this.state;
+                list.splice(index, 1)
+                event.stopPropagation()
+                this.setState({
+                    list: list
+                })
+            }
+            addcheck(index) {
+                let { list, total } = this.state;
+                total = 0;
+                if (!list[index].ischeck) {
+                    list[index].ischeck = true;
+                } else {
+                    list[index].ischeck = false;
+                }
+                list.map((val) => {
+                    if (val.ischeck) {
+                        total += Number.parseInt(val.price)
+                    }
+                })
+                this.setState({
+                    list: list,
+                    total: total
+                })
+            }
+            search(event) {
+                let { list } = this.state;
+                if (event.target.value != "") {
+                    list.map((val) => {
+                        if (val.name.includes(event.target.value)) {
+                            val.ishow = true
+                        }else{
+                            val.ishow = false;
+                        }
+                    })
+                } else {
+                    
+                    list.map((val) => {
+                        val.ishow = true
+                    })
+                }
+                this.setState({
+                    list: list
+                })
+            }
+            decall(){
+                let {list} = this.state;
+                for(let i = 0;i<list.length ;i++){
+                    if(list[i].ischeck){
+                        list.splice(i,1);
+                        i--;
+                    }
+                }
+                this.setState({
+                    list:list
+                })
+            }
+            render() {
+                return (
+                    <div id="box">
+                        <Child1 add={this.add} search={this.search} />
+                        <Child2 show={this.state.list} total={this.state.total} dec={this.dec} addcheck={this.addcheck} />
+                        <button onClick={this.decall}>删除选中</button>
+                    </div>
+                )
+            }
+        }
+        // 添加
+        class Child1 extends React.Component {
+            constructor() {
+                super()
+            }
+            render() {
+                return (
+                    <div>
+                        <p><label >搜索</label>：<input type="text" onChange={this.props.search} /> </p>
+                        <p><label >名称</label>：<input type="text" ref={(name) => { return this.name = name }} /> <label >价格</label>：<input type="text" ref={(price) => { return this.price = price }} /><button onClick={() => {
+                            let name = this.name.value;
+                            let price = this.price.value;
+
+                            this.props.add(name, price)
+                            this.name.value = ""
+                            this.price.value = ""
+                        }}>添加</button></p>
+
+                    </div>
+                )
+            }
+        }
+        // 显示
+        class Child2 extends React.Component {
+            constructor() {
+                super()
+            }
+            render() {
+
+                return (
+                    <div>
+                        <ul>
+                            {
+                                this.props.show.map((val, key) => {
+                                    let str = ""
+                                    if (val.ischeck) {
+                                        str = "ok"
+                                    }
+                                    if (val.ishow) {
+                                        return <li key={key} className={str} onClick={() => {
+                                            this.props.addcheck(key)
+                                        }}><input type="checkbox" checked={val.ischeck?true:false}/> 名称 ：{val.name} ----- 价格：{val.price}  <button onClick={(event) => {
+                                            this.props.dec(key,event)
+                                        }}>[X]</button></li>
+                                    }
+
+                                })
+                            }
+                        </ul>
+                        <p>总价：{this.props.total}</p>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(
+            <Main />,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+
+</html>
