@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="box">
+        <!-- <ul>
+            <li v-for="(item,index) in goods">序号：{{index+1}} - 名字：{{item.title}} - 价格：{{item.price}} - 数量：{{item.num}}</li>
+        </ul> -->
+        <ul>
+            <li v-for="(item,key,index) in obj">{{key}} - {{item}} -  {{index}}</li>
+        </ul>
+
+    </div>
+    <script>
+
+        new Vue({
+            el: "#box",
+            
+            data: {
+                obj:{
+                uname:"小名",
+                age:19,
+                school:"黑大"
+            },
+                goods:[
+                    {
+                        title:"衣服",
+                        price:10,
+                        num:10
+                    },
+                    {
+                        title:"帽子",
+                        price:20,
+                        num:20 
+                    },
+                    {
+                        title:"鞋子",
+                        price:60,
+                        num:40
+                    }
+                ]
+            }
+        })
+
+
+    //   循环实现列表 因为已经关联过 只要控制数据就OK 通过v-for可以把 data里的数据拿出来然后渲染出来
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/vue.js"></script>
+    <style>
+        .div1 {
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+
+        .div2 {
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box">
+        <div class="div1" v-on:click="click1">
+            <!-- <div class="div2" v-on:click="click2(1,$event)"></div> -->
+            <div class="div2" v-on:click.stop="click2(1)"></div> 
+            <!-- 阻止事件冒泡 不仅可以用event事件源的方法 也可以在后面加上修饰符也可以阻止事件冒泡 -->
+        </div>
+
+    </div>
+    <script>
+
+        new Vue({
+            el: "#box",
+
+            methods: {
+                click1() {
+                    console.log("click1");
+                }
+                ,
+                click2(num, event) {
+                //    event.stopPropagation()
+                // 阻止事件冒泡
+                    console.log(num);
+                   
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

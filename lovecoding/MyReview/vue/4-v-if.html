@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="box">
+        <ul>
+            <li>衣服： 
+                <span v-if="good1">{{good1}}</span>  
+                <span v-else>售空</span></li>
+            <li>帽子：{{good2}}</li>
+            <li>鞋子：{{good3}}</li>
+        </ul>
+
+    </div>
+    <script>
+
+        new Vue({
+            el: "#box",
+            data: {
+                good1: 0,
+                good2: 10,
+                good3: 30
+            }
+        })
+
+
+        // v-show 控制显示隐藏 条件成立就显示 不成立就隐藏起来
+
+        // v-if 和 v-show 区别 ： if 是 如果有才渲染，如果不是就直接移除了 但是 show 只是把元素的控制显示隐藏 控制display 而不是直接删除
+    </script>
+</body>
+
+</html>
