@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        let arr = [1, 2, 3, 4, 5, 6, 7];
+        let max = -9999;
+        let min = 9999;
+        let maxi = 0, mini = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+                maxi = i;
+            }
+            if (arr[i] < min) {
+                min = arr[i];
+                mini = i;
+            }
+        }
+        // 最大放到第一个
+        let temp = arr[0];
+        arr[0] = arr[maxi];
+        arr[maxi] = temp;
+
+        // 最小放到最后一个
+        temp = arr[arr.length - 1];
+        arr[arr.length - 1] = arr[mini];
+        arr[mini] = temp;
+        if (arr[0] < arr[arr.length - 1]) {
+            temp = arr[arr.length - 1];
+            arr[arr.length - 1] = arr[0];
+            arr[0] = temp;
+        }
+        console.log(arr);
+    </script> -->
+
+    <script>
+
+         function recurStr(s) {
+            var map = {}, t, i, j;
+            for (i = 0; i <= s.length; i++) {
+                for (j = i + 1; j < s.length; j++) {
+                    // 截取不同长度的字符串，放入map中（长度大于1）
+                    t = s.substring(i, j);
+                    if (map[t] != null) {
+                        map[t]++;
+                    } else {
+                        map[t] = 1;
+                    }
+                }
+            }
+            for (i in map) {
+                t = map[i];
+                if (typeof t == 'number' && t > 1)
+                    console.log(i, ':', t);
+            }
+        }
+        recurStr('asdffasdssfff'); 
+
+    </script>
+
+    <!-- <script>
+
+        function foo(num) {
+            let a,b,c,d;
+            a = num % 10;  //个位数
+            b = Number.parseInt( num/1000);  //千位数
+            c = Number.parseInt((num % 1000) /100) ; //百位数
+            d = Number.parseInt((num % 100)  /10 ); //十位数
+
+            a = a+ 5;
+            b = b+ 5;
+            c = c+ 5;
+            d = d+ 5;
+
+            let sum = a+b+c+d;
+            
+            sum = sum % 10;
+         
+            a = sum % 10;  //个位数
+            b = Number.parseInt( sum/1000);  //千位数
+            c = Number.parseInt((sum % 1000) /100) ; //百位数
+            d = Number.parseInt((sum % 100)  /10 ); //十位数
+
+            sum = a *1000 + b +d *100 +c * 10;
+            console.log(sum);
+        }
+
+        foo(1254); -->
+
+    </script>
+</body>
+
+</html>

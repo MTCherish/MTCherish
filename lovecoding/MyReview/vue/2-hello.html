@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    
+    <div id="box" >{{ str }}
+        <div>{{ str1 }}</div>
+        <div v-html="str1"></div>
+        <div v-text="str"></div>
+    </div>
+    <script>
+
+       let app = new Vue({
+           el:"#box",
+           data:{
+               str:"hello",
+               str1:"<h1>你好</h1>"
+           }
+       })
+
+       app.str = "world"
+    //    一些简单的数据展示  如果想把 标签显示就直接 v-html 同理 v-text 也是一样
+    // v-html v-text 如果只有一个东西可以 但是有别的就全给覆盖掉了
+    
+    </script>
+</body>
+</html>
