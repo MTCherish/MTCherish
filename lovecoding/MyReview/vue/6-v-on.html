@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="box">
+        <h1>{{num}}</h1>
+        <button v-on:click ="clickh(3)">add</button>
+    </div>
+    <script>
+
+        new Vue({
+            el: "#box",
+            
+            methods: {
+                clickh(index = 1) {
+                    this.num += index 
+                }
+            },data:{
+                num:0
+            },
+           
+        })
+    </script>
+
+    <!-- 点击事件方法 可以在定义并且在methods 里面去触发这个方法 -->
+</body>
+
+</html>
