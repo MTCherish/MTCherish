@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <ul id="box">
+
+    </ul>
+    <script>
+        let promise1 = new Promise(function(resolve,reject){
+            $.get("./data/data1.json",function(res){
+                resolve(res.data)
+            })
+        })
+        let promise2 = new Promise(function(resolve,reject){
+            $.get("./data/data2.json",function(res){
+                resolve(res.data)
+            })
+        })
+
+        Promise.all([promise1,promise2]).then(function(res){
+            console.log(res);
+            let resArr = res[0].map(function(val1,key,arr){
+                for(let val2 of res[1]){
+                    if(val1.jrid == val2.jrid){
+                        return {
+                            jrid:val1.jrid,
+                            levelname:val1.levelname,
+                            userName:val2.userName
+                        }
+                    }
+                }
+            })
+            let str = ""
+            resArr.map(function(val){
+                str+=`
+                    <li>姓名：${val.userName}----级别：${val.levelname}</li>
+                `
+            })
+            $("#box").html(str);
+        })
+        // event loop 事件循环
+
+        // 微任务 promise
+        // 宏任务 setTimeout setInterval
+    </script>
+</body>
+</html>

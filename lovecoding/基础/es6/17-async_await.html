@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // async function foo(){
+        //     return "hello"
+
+        // }
+
+        // console.log(foo());
+
+        // function getData(){
+        //     return new Promise(function(resolve,reject){
+        //         setTimeout(function(){
+        //             resolve("success")
+        //             console.log("success");
+        //         },1000)
+        //     })
+        // }
+
+        // async function foo(){
+        //     await getData()
+        //     console.log("1");
+        // }
+        // foo()
+
+        // getData().then(function(res){
+        //     console.log(res);
+        // })
+        // console.log("1");
+
+        // async function foo(){
+            
+        // }
+        // console.log(foo());
+
+
+        function getData(){
+            return new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    reject()
+                },1000)
+            })
+        }
+
+        async function foo(){
+            try{
+                await getData()
+            }catch(erro){
+                console.log("error");
+            }
+            console.log("1");
+        }
+        foo()
+
+    </script>
+</body>
+</html>

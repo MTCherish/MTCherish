@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="content"
+        style="height:150px;line-height:150px;text-align:center; color: #fff;background-color:#ccc;font-size:80px;margin-bottom: 20px">
+    </div>
+    <div id="content2"
+        style="height:150px;line-height:150px;text-align:center; color: #fff;background-color:#ccc;font-size:80px;margin-bottom: 20px">
+    </div>
+    <div id="content3"
+        style="height:150px;line-height:150px;text-align:center; color: #fff;background-color:#ccc;font-size:80px;">
+    </div>
+    <script>
+        //正常执行
+        let num = 1;
+        let content = document.getElementById('content');
+        function count() {
+            this.innerHTML = num++;
+        };
+        content.onmousemove = count;
+
+        //防抖 所谓防抖，就是指触发事件后在 n 秒内函数只能执行一次，如果在 n 秒内又触发了事件，则会重新计算函数执行时间
+
+        let num2 = 1;
+        let content2 = document.getElementById('content2');
+        function count2() {
+            this.innerHTML = num2++
+        }
+
+        function debounce(fn, wait) {
+            let timer = null;
+            return function (...arg) {
+                let context = this;
+                if (timer) {
+                    clearTimeout(timer)
+                }
+                timer = setTimeout(function () {
+                    fn.apply(context, arg)
+                }, wait)
+            }
+
+        }
+
+        content2.onmousemove = debounce(count2, 1000);
+
+        // 节流 所谓节流，就是指连续触发事件但是在 n 秒中只执行一次函数
+        let num3 = 1;
+        let content3 = document.getElementById('content3');
+        function count3() {
+            this.innerHTML = num3++
+        }
+
+        function throttle(fn, wait) {
+            let timer = null
+            return function (...arg) {
+                let context = this;
+                if (!timer) {
+                    timer = setTimeout(function () {
+                        timer = null;
+                        fn.apply(context, arg)
+                    }, wait)
+                }
+            }
+        }
+
+        content3.onmousemove = throttle(count3, 1000)
+
+
+
+    </script>
+</body>
+
+</html>

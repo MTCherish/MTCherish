@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        $.fn.extend({
+            vip2: function (obj) {
+                var defaultVal = {
+                    name:"小刚",
+                    school:"黑大"
+                }
+                $.extend(defaultVal,obj);
+                // console.log(str);
+                // $(this).text(str)
+                $(this).html(
+                    "<p>姓名："+defaultVal.name+"</p>"+
+                    "<p>学校："+defaultVal.school+"</p>"
+                )
+            }
+        })
+        $("#box").vip2({
+           school:"理工"
+            
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>

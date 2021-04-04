@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = [1,2,[3,4],{a:"1"}];
+        // let arr2 = [...arr];
+        
+        // 方法一递归
+        // function deepClone(target){
+        //     let result;
+        //     if(typeof target === "object"){
+        //         if(Array.isArray(target)){
+        //             result = [];
+        //             for(let i=0;i<target.length;i++){
+        //                 result.push(deepClone(target[i]))
+        //             }
+        //         }else{
+        //             result = {};
+        //             for(let key in target){
+        //                 result[key] = deepClone(target[key]);
+        //             }
+        //         }
+        //         return result;
+        //     }else{
+        //         return target;
+        //     }
+        // }
+        // let arr2 = deepClone(arr);
+        // arr[2][0] = "hello"
+        // console.log(arr2);
+
+        // 方法二 JSON
+
+        let obj = {
+            a:"1",
+            b:{
+                c:"2",
+                d:"3",
+                e:new Date(),
+                f:function(){
+                    console.log("hello");
+                },
+                g:undefined
+            }
+        }
+        // obj.b.f()
+        // console.log(obj.b.e.getFullYear());
+        let obj2 =JSON.parse(JSON.stringify(obj)); 
+        obj.b.c = "hello";
+        console.log(obj2);
+        // console.log(obj2.b.e.getFullYear());
+
+
+    </script>
+</body>
+</html>

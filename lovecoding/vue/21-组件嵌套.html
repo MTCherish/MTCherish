@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <com1>
+        </com1>
+    </div>
+    <template id="tem1">
+        <div>
+            <com2></com2>
+            <h1>子组件1</h1>
+        </div>
+    </template>
+    <template id="tem2">
+        <div>
+            <h1>子组件2</h1>
+        </div>
+    </template>
+
+    <script>
+
+        new Vue({
+            el: "#app",
+            data: {
+            },
+            components: {
+                com1: {
+                    template: "#tem1",
+                    components: {
+                        com2: {
+                            template: "#tem2"
+                        }
+                    }
+                },
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>

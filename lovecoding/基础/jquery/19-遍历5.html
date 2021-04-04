@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <!-- <div class="div1">
+        hello
+        <div class="div2">
+            world
+            <div class="div3">
+                你好
+            </div>
+        </div>
+    </div> -->
+    <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li class="third-item">list item 3</li>
+        <li>list item 4</li>
+        <li>list item 5</li>
+        <li class="test">list item 6</li>
+        <li>list item 7</li>
+     </ul>
+    <script>
+        // $(".third-item").nextUntil(".test").css("color",'red');
+        // $(".third-item").nextAll().css("color",'red');
+
+        // $(".third-item").next().css("color",'red');
+
+    //    $(".div1").find(".div3").css("color","red"); 
+
+    $(".third-item").prevAll().css("color",'red');
+    
+    </script>
+</body>
+
+</html>

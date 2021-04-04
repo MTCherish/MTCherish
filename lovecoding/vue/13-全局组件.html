@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{num}}
+        <mytest></mytest>
+        <mytest></mytest>
+    </div>
+    <div id="app2">
+        {{num}}
+        <mytest></mytest>
+    </div>
+    <script>
+        Vue.component("mytest",{
+            template:"<div><h1>hello</h1><h1>world</h1></div>"
+        })
+        new Vue({
+            el:"#app",
+            data:{
+                num:1
+            }
+        })
+        new Vue({
+            el:"#app2",
+            data:{
+                num:3
+            }
+        })
+    </script>
+</body>
+</html>

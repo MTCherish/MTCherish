@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-pre>{{str}}</div>
+        <div v-cloak>...</div>
+        <div v-once>{{num}}</div>
+        <button @click="addHandle">add</button>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                num:0,
+                str:"hello"
+            },
+            methods: {
+                addHandle(){
+                    ++this.num
+                }
+            },
+        })
+    </script>
+</body>
+</html>

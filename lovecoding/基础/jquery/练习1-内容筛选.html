@@ -35,13 +35,11 @@
       background: #FF6500;
       color: #fff;
     }
-
-    .test {
-      display: none;
+    .test{
+        display: none;
     }
-
-    .active {
-      display: table-row;
+    .active{
+        display: table-row;
     }
   </style>
 </head>
@@ -108,8 +106,7 @@
     </tbody>
   </table>
   <script>
-
-    $("#filterName").keyup(function(){
+      $("#filterName").keyup(function(){
           var thisVal = this.value;
           $("tbody tr").css("display","none");
           $("tbody tr:contains("+thisVal+")").css("display","table-row");

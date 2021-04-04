@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app" v-color="mycolor">hello</div>
+    <script>
+        Vue.directive("color",{
+            inserted(el,binding,vnode){
+                console.log(el,binding,vnode);
+                el.style.color = binding.value
+            }
+        })
+        new Vue({
+            el:"#app",
+            data:{
+                mycolor:"blue"
+            }
+        })
+    </script>
+</body>
+</html>

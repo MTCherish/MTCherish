@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <style>
+        #test{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+        }
+        #test2{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+        }
+        #test3{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        <div id="test2">
+            <div id="test3"></div>
+        </div>
+    </div>
+    <script>
+        $("#test").click(function(){
+            console.log("test");
+        })
+        $("#test2").click(function(){
+            console.log("test2");
+        })
+        $("#test3").click(function(event){
+            console.log("test3");
+            // event.stopPropagation();
+        })
+
+        setTimeout(function(){
+            // $("#test3").trigger("click");
+            $("#test3").triggerHandler("click");
+
+        },2000)
+    </script>
+</body>
+</html>

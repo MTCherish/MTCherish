@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li class="test">2</li>
+        <li>3</li>
+        <li>4</li>
+        <li class="test">5</li>
+        <li>6</li>
+    </ul>
+    <div class="test">hello</div>
+    <script>
+        // $("li:eq(2)").css("color","red");
+        // $("li").eq(2).css("color","red");
+        // $("li").filter(".test").css("color","red");
+        var arr = $("li").filter(function(index){
+            if($(this).hasClass("test")){
+                return true
+            }
+        })
+        // console.log(arr);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+
+</head>
+
+<body>
+    <!-- <input type="text" id="inp1"> -->
+    <!-- <select name="" id="sel1">
+        <option value="heida">黑大</option>
+        <option value="ligong">理工</option>
+        <option value="nongda">农大</option>
+    </select> -->
+
+    <!-- <form id="target" action="destination.html">
+        <input type="text" value="Hello there" />
+        <input type="submit" value="Go" />
+    </form> -->
+    <textarea name="" id="text1" cols="30" rows="10"></textarea>
+    <script>
+
+        $("#text1").select(function(){
+            console.log("select");
+        })
+
+        $("#target").submit(function(event){
+            console.log("submit");
+            event.preventDefault();
+            // return false
+        })
+
+
+        $("#inp1").focus(function () {
+            console.log("focus");
+        })
+        $("#inp1").blur(function () {
+            console.log("blur");
+        })
+
+        $("#sel1").change(function () {
+            console.log(this.value);
+        })
+    </script>
+</body>
+
+</html>

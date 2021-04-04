@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    
+</head>
+    
+<body>
+    <div class="div1">
+        <input type="text" id="inp1">
+    </div>
+    <script>
+        $("#inp1").keydown(function(event){
+            console.log(event.which);
+        })
+      $(".div1").focusin(function(){
+          console.log("focusin");
+      })
+      $(".div1").focusout(function(){
+          console.log("focusout");
+      })
+    </script>
+</body>
+
+</html>

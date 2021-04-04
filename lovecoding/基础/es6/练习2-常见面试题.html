@@ -1,102 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <!-- js 模拟 栈和 队列 -->
-
+    <!-- 用js 模拟对  栈 和 队列的操作 -->
     <script>
-        let temp = [1,2,2,3,4,1,2,5];
-        // 栈
-        temp.push(6);
-        temp.pop();
-        console.log(temp);
+        // let arr = [1,2,3];
+        // arr.push(1);
+        // arr.unshift(1);
+        // console.log(arr);
+        // console.log(arr.pop());
+        // console.log(arr);
 
-        //队列 
-        temp.push(7);
-        temp.splice(0,1);
-        console.log(temp);
-
-    </script>
-
-
-    <!-- 数组去重 -->
-    <script>
-        let temp1 = [1,2,2,3,4,1,2,5];
-        let temp2= [];
-        for(let i = 0;i<temp1.length;i++){
-            if(temp2[temp1[i]]==undefined)
-                temp2[temp1[i]] = temp1[i];
-        }
-
-        console.log(temp2);
-
-        let temp3 = [];
-        for(let i = 0;i<temp2.length;i++){
-            temp3.push(temp2[i])
-        }
-       console.log(temp3);
+        // console.log(arr.slice(2));
+        // console.log(arr);
+        // console.log(arr.splice(2,1));
+        // console.log(arr);
+        // arr.shift()
+        // console.log(arr);
 
 
     </script>
 
+    <!-- 对数组进行去重操作 -->
+    <script>
+        // let arr = [1, 2, 3, 3, 2, 6, 7];
 
-   <!-- 手动实现call  bind -->
-   <script>
-    // Array
-    // let arr = [];
-    // arr.push(1);
-    // console.log(arr);
+        // let obj = [
+        //     {
+        //         name: "xxx",
+        //         age: ""
+        //     }, {
+        //         name:"xxx",
+        //     },{
+        //         name:"yyy"
+        //     }
+        // ]
 
-    // let num = "12";
-    // num.push(2)
+        let arr = [1, 2, 3, 3, 2, 6, 7,3];
+        //方法一
+        // function unique(arr){
+        //     for(let i=0;i<arr.length;i++){
+        //         for(let j=i+1;j<arr.length;j++){
+        //             if(arr[i] == arr[j]){
+        //                 arr.splice(j,1);
+        //                 j--;
+        //             }
+        //         }
+        //     }
+        // }
+        // unique(arr);
+        // console.log(arr);
 
-    // let arr = new Array(1,2);
-    // // console.log(Array.prototype);
-    // // console.log(arr.__proto__);
+        // 方法二
+        // function unique(arr){
+        //     let newArr = [];
+        //     for(let i =0;i<arr.length;i++){
+        //         // if(newArr.indexOf(arr[i]) == -1){
+        //         if(!newArr.includes(arr[i])){
+        //             newArr.push(arr[i]);
+        //         }
+        //     }
+        //     return newArr;
+        // }
+        // console.log(unique(arr));
 
-    // Array.prototype.vip2 = function(){
-    //     console.log(this);
-    //     console.log("hello world");
-    // }
-    // arr.vip2()//"hello world"
+        // 方法三
+        // function nuique(arr){
+        //     arr = arr.sort(function(a,b){
+        //         return b-a
+        //     })
+        //     let newArr = [arr[0]];
+        //     for(let i = 1;i<arr.length;i++){
+        //         if(arr[i-1] != arr[i]){
+        //             newArr.push(arr[i]);
+        //         }
+        //     }
+        //     return newArr;
+        // }
+        // console.log(nuique(arr));
 
-    // function Foo(){
-    //     console.log("hello")
-    // }
-    // Foo.prototype.test = function(){
-    //     console.log("test");
-    // }
-    // console.log(Foo.prototype);
-
-    // let foo2 = new Foo();
-    // foo2.test()
-
-    
-    Function.prototype.myCall = function(obj){
-      console.log(obj);
-    }
-    Function.prototype.myBind = function(){
-
-    }
-
-
-    let a = 20;
-    let obj = {
-        a:"hello"
-    }
-
-    function foo(){
-        console.log(this.a);
-    }
-    foo.myCall(obj)//hello
-    // let foo2 = foo.myBind();
-    // foo2()//hello
+        // 方法四
+        // function unique(arr){
+        //     let obj = {};
+        //     for(let i=0;i<arr.length;i++){
+        //         if(!(arr[i] in obj)){
+        //             obj[arr[i]] = 1
+        //         }else{
+        //             obj[arr[i]]++
+        //         }
+        //     }
+        //     console.log(obj);
+        //     console.log(Object.keys(obj));
+        // }
+        // unique(arr);
 
 
-</script>
+        // let obj = {};
+        // obj['1'] = "hello";
+        // console.log(obj);
+
+
+        // 方法五
+        // function unique(arr){
+        //     let newArr = [];
+        //     newArr = arr.filter(function(val,key,thisArr){
+        //         return thisArr.indexOf(val) == key
+        //     })
+        //     console.log(newArr);
+        // }
+        // unique(arr)
+
+        //方法六
+        function unique(arr){
+            // console.log(new Set(arr));
+            let setArr = Array.from(new Set(arr)); 
+            // for(let val of setArr){
+            //     console.log(val);
+            // }
+            console.log(setArr);
+        }
+        unique(arr)
+
+        
+    </script>
+
+    <!-- 手动实现call  bind -->
+    <script>
+        // Array
+        // let arr = [];
+        // arr.push(1);
+        // console.log(arr);
+
+        // let num = "12";
+        // num.push(2)
+
+        // let arr = new Array(1,2);
+        // // console.log(Array.prototype);
+        // // console.log(arr.__proto__);
+
+        // Array.prototype.vip2 = function(){
+        //     console.log(this);
+        //     console.log("hello world");
+        // }
+        // arr.vip2()//"hello world"
+
+        // function Foo(){
+        //     console.log("hello")
+        // }
+        // Foo.prototype.test = function(){
+        //     console.log("test");
+        // }
+        // console.log(Foo.prototype);
+
+        // let foo2 = new Foo();
+        // foo2.test()
+
+        // var a = 10;
+        // var obj = {
+        //     a:"1"
+        // }
+        // function foo(arg1,arg2){
+        //     console.log(this.a,arg1,arg2);
+        //     return "hello"
+        // }
+
+        // var str = foo.call(obj,"aa","bb");
+        // console.log(str);
+        // foo.apply(obj,["aa","bb"]);
+        // var foo2 = foo.bind(obj);
+        // foo2()
+
+        
+        // Function.prototype.myCall = function(context,...arg){
+        //     context.fn = this;
+        //     var res = context.fn(...arg);
+        //     delete context.fn;
+        //     return res;
+        // }
+        // Function.prototype.myBind = function(context,...arg){
+        //     var that = this
+        //     return function(){
+        //         that.apply(context,arg)
+        //     }
+        // }
+
+
+        // var a = 20;
+        // var obj = {
+        //     a:"hello",
+        //     // fn:function(){
+        //     //     console.log(this.a)
+        //     // }
+        // }
+
+        // function foo(arg1,arg2){
+        //     console.log(this.a,arg1,arg2);
+        //     return "hello world"
+        // }
+        // // var str = foo.myCall(obj,"aa","bb")//hello
+        // // console.log(str);
+        // let foo2 = foo.myBind(obj,"aa","bb");
+        // foo2()//hello
+
+
+        // function foo(){
+        //     // console.log(arguments);
+        //     // console.log(Array.from(arguments));
+        //     // arguments.slice(0)
+        //     var arr =Array.prototype.slice.call(arguments,0);
+        //     console.log(arr);
+            
+        // }
+        // foo(1,2,3,4,5,6,7)
+
+        // var arr = [1,2,3,4,5,6];
+
+        // console.log(arr.slice(0));
+
+
+
+    </script>
 </body>
+
 </html>

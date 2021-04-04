@@ -6,59 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
     <script src="./js/vue.js"></script>
-    <style>
-       .active{
-           color: red;
-       }
-       .active2{
-           font-size: 40px;
-       }
-    </style>
+
 </head>
 
 <body>
-    <div id="app">
-        <!-- <div v-bind:class="class1">hello world</div> -->
-        <!-- 想要把data 里面的数据按照变量的方式解析出来 要用 v-bind -->
-
-        <!-- <div v-bind:class="{active:class2}">hello </div> -->
-        <!-- <button @click="clickHandle">click</button> -->
-
-        <!-- 通过 {} 前面一个类名 后面一个bool 如果是真就把这个这个style 渲染 -->
-
-        <!-- <div v-bind:class="['active2',class1]">hello</div> -->
-
-        <!-- 通过 [] 的方式去显示 如果不是变量就用'' 括起来 是变量就把data里面的写上 -->
-
-        <!-- <div v-bind:class="'active2 '+class1">hello</div> -->
-        <!-- 可以通过字符串的形式去显示 -->
-
-        <div :data-id="class1" :style="{color:color1,fontSize:fontsize}">11</div>
-        <!-- 内联样式 -->
-
-    </div>
+    <div id="app"></div>
 
     <script>
-
         new Vue({
             el:"#app",
             data:{
-                class1:'active',
-                class2:false,
-                color1:'red',
-                fontsize:'40px'
-            },
-            methods:{
-                clickHandle(){
-                    this.class2 = true;
-                }
+                
             }
         })
-
     </script>
-   
+
+
+
 </body>
 
 </html>

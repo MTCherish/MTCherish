@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>{{num}}</h1>
+        <mytest @myhandle="changeNum"></mytest>
+    </div>
+    <template id="tem1">
+        <div>
+            <button @click="addHandle">add</button>
+        </div>
+    </template>
+    
+    <script>
+        
+        new Vue({
+            el:"#app",
+            data:{
+                num:1
+            },
+            methods: {
+                changeNum(i){
+                    // console.log("com");
+                    this.num += i;
+                }
+            },
+            components:{
+                mytest:{
+                    methods: {
+                        addHandle(){
+                            this.$emit("myhandle",10);
+                        }
+                    },
+                    template:"#tem1"
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

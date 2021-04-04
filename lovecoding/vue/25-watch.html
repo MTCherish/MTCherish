@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>firstName:{{firstName}}</h1>
+        <h1>lastName:{{lastName}}</h1>
+        <h1>fullName:{{fullName}}</h1>
+    </div>
+    
+    <script>
+        let app = new Vue({
+            el:"#app",
+            data:{
+                firstName:"Foo",
+                lastName:"Bar",
+                fullName:"Foo Bar"
+            },
+            watch:{
+                firstName(val,oldval){
+                    // 一个值可以影响多个值
+                    // console.log(val,oldval);
+                    this.fullName = val + " " + this.lastName
+                },
+                lastName(val,oldval){
+                    this.fullName = this.firstName + " " + val
+                }
+            }
+            
+        })
+        
+    </script>
+</body>
+</html>

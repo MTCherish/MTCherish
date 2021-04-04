@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function Foo(){
+        //     console.log(this);
+        // }
+
+        // let foo = new Foo();
+
+
+        function Foo(name,age){
+            this.name = name;
+            this.age = age
+        }
+        Foo.prototype.showName = function(){
+            console.log(this.name);
+        }
+        function myNew(fn,name,age){
+            var obj = new Object();
+            obj.__proto__ = fn.prototype;
+            fn.call(obj,name,age);
+            return obj
+        }
+        let foo2 = myNew(Foo,"小王",18)
+        console.log(foo2.name);
+        foo2.showName();
+
+    </script>
+</body>
+</html>

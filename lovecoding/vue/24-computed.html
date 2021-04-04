@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>firstName:{{firstName}}</h1>
+        <h1>lastName:{{lastName}}</h1>
+        <h1>fullName:{{fullName}}</h1>
+        <h1>{{fullName2}}</h1>
+    </div>
+    
+    <script>
+        let app = new Vue({
+            el:"#app",
+            data:{
+                firstName:"Foo",
+                lastName:"Bar",
+                fullName:"Foo Bar"
+            },
+            computed:{
+                fullName2(){
+                    // 多个值影响一个值
+                    return this.firstName + " " + this.lastName
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

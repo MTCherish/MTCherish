@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var obj = {
+        //     age:18
+        // }
+        // Object.defineProperty(obj,'age',{
+        //     get(){
+        //         console.log('get');
+        //         return 18
+        //     },
+        //     set(){
+        //         console.log('set');
+        //     }
+        // })
+        // console.log(obj.age);
+        // obj.age = 20;
+
+        //proxy
+        // let obj = {
+        //     age:18
+        // }
+        // let pro = new Proxy(obj,{});
+        // pro.age = 20;
+        // console.log(obj.age);
+
+
+        // let arr = [1,2,3];
+        // arr = new Proxy(arr,{
+        //     get(target,prop){
+        //         // console.log(target,prop);
+        //         return prop in target ?target[prop] : "error"
+        //     }
+        // })
+        // console.log(arr[100]);
+
+    //    let obj = {
+    //        age:18,
+    //        school:"黑大"
+    //    }
+    //    obj = new Proxy(obj,{
+    //         get(target,prop){
+    //             // console.log(target,prop);
+    //             return prop in target ?target[prop] : "error"
+    //         }
+    //     })
+    //     console.log(obj.sex);
+
+    let arr = [];
+    let pro = new Proxy(arr,{
+        set(target,prop,val){
+            console.log(val);
+            if(typeof val == "number"){
+                target[prop] = val
+                return true
+            }else{
+                return false
+            }
+        }
+    })
+    // arr.push(1);
+    pro[0] = 1
+    console.log(arr);
+    </script>
+</body>
+</html>

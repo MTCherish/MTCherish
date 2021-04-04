@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.4.1.js"></script>
+    <style>
+        .active{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">hello</div>
+    <div class="div2">world</div>
+    <script>
+        $(".div1").siblings(".div2").css("color","red").end().addClass("active");
+    </script>
+</body>
+</html>

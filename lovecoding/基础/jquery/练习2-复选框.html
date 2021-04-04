@@ -13,41 +13,25 @@
 </head>
 
 <body>
-    <h1>你最喜欢的运动是</h1>
-    <input type="checkbox" name="cb" value="">足球
-    <input type="checkbox" name="cb" value="">篮球
-    <input type="checkbox" name="cb" value="">羽毛球
-    <input type="checkbox" name="cb" value="">乒乓球
-    <input type="checkbox" name="cb" value="">铅球
-    <input type="checkbox" name="cb" value="">跑步
-    <input type="checkbox" name="cb" value="">游泳
-    <div>
-        <input type="button" value="全选" id="all">
-        <input type="button" value="全不选" id="noall">
-        <input type="button" value="反选" id="res">
-    </div>
-
-    <script>
-        $("#all").click(function () {
-            $(":checkbox").prop("checked",true);
-        })
-        $("#noall").click(function () {
-            $(":checkbox").prop("checked",false);
-        })
-        // $("#res").click(function () {
-           
-        //    var chexkb =$(":checkbox");
-        //    for(var i = 0 ; i<chexkb.length;i++){
-        //        if(chexkb[i].checked){
-        //         chexkb[i].checked = false;
-        //        }else{
-        //         chexkb[i].checked = true;
-        //        }
-        //    }
-           
-        // })
-
-        $("#reverse").click(function(){
+    <h1>你爱好的运动是？</h1>
+    <form>
+      <input type="checkbox" name="hobby" value="1">足球
+      <input type="checkbox" name="hobby" value="2">排球
+      <input type="checkbox" name="hobby" value="3">篮球
+      <input type="checkbox" name="hobby" value="4">羽毛球
+      <br>
+      <button id="all" type="button">全选</button>
+      <button id="no" type="button">全不选</button>
+      <button id="reverse" type="button">反选</button>
+    </form>
+ <script>
+     $("#all").click(function(){
+         $(":checkbox").prop("checked",true);
+     })
+     $("#no").click(function(){
+        $(":checkbox").prop("checked",false);
+     })
+     $("#reverse").click(function(){
          var checkBox = $(":checkbox");
         //  for(var i=0;i<checkBox.length;i++){
         //      console.log(checkBox[i].checked);
@@ -55,7 +39,6 @@
         checkBox.each(function(key,val){
             if(val.checked){
                 $(val).prop("checked",false)
-                // 要转换成一个jquery 对象
             }else{
                 $(val).prop("checked",true)
             }
@@ -68,7 +51,7 @@
     //  arr.forEach(function(val,key,arr){
     //      console.log(val,key,arr);
     //  })
-    </script>
+ </script>
 </body>
 
 </html>

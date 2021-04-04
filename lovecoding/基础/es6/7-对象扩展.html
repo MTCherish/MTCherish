@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let school = "黑大";
+        // let obj = {
+        //     school,
+        //     age:20,
+        //     sex:"男",
+        //     speak(){
+        //         console.log("hello");
+        //     }
+        // }
+        // // console.log(obj);
+        // obj.speak();
+
+
+        // let key = "age";
+        // let obj = {
+        //     school:"黑大",
+        //     testage:20,
+        //     testsex:"男",
+        //     speak(){
+        //         console.log("hello");
+        //     }
+        // }
+
+        
+        // console.log(obj['test'+key]);
+
+        // let obj = {
+        //     age:30
+        // }
+        // let obj2 = {
+        //     age:30
+        // }
+
+        // // console.log(obj == obj2);
+        // console.log(Object.is(obj,obj2));
+
+
+        // console.log(-0 === +0);
+        // console.log(Object.is(-0,+0));
+        // console.log(NaN === NaN);
+        // console.log(Object.is(NaN,NaN));
+
+        // let obj = {
+        //     age:20
+        // }
+        // let obj2 = {
+        //     age:18,
+        //     school:"黑大"
+        // }
+        // Object.assign(obj,obj2)
+        // console.log(obj);
+
+        // let obj = {
+        //     age:20
+        // }
+        // let obj2 = {
+        //     age:18,
+        //     school:"黑大",
+        //     test:{
+        //         a:"hello"
+        //     }
+        // }
+        // Object.assign(obj,obj2)
+        // obj2.test.a = "理工"
+        // console.log(obj);
+
+        let obj = {
+            a:"1",
+            b:"2",
+            c:"3",
+            d:"4",
+            e:"5"
+        }
+
+        // for(let key in obj){
+        //     if(key == 'd'){
+        //         console.log("true");
+        //     }
+        // }
+
+        // let arr = Object.keys(obj);
+        // if(arr.includes("d")){
+        //     console.log('true');
+        // }
+
+        if('d' in obj){
+            console.log("true");
+        }
+
+    </script>
+</body>
+</html>
