@@ -11,13 +11,45 @@
 </head>
 
 <body>
-    <div id="app"></div>
+
+    <!--
+        .lazy-听change事件而不是input
+        .number -将有效的输入字符串转换为数字
+        .trim -修剪输入
+    -->
+    <div id="app">
+        <!-- <input type="text" v-model="val1">    v-model 可以关联data里面的数据  -->
+        <!-- <input type="text" v-model.lazy="val1">  用来监听事件就是change事件的-->
+        <!-- <input type="text" v-model.number="val1"> 用来将输入如果是数字的话转化成数字 如果不是就是字符串-->
+        <!-- <input type="text" v-model.trim="val1">     用来将输入的两边的 空格 给去掉-->
+
+
+        <!-- <select name="" id="" v-model="sel1">
+            <option value="黑大">黑</option>
+            <option value="林大">林</option>
+            <option value="农大">农</option>
+            <option value="师大">师</option>
+        </select> -->   
+        <!-- 可以在下拉列表中使用 关联data 里面的数据 选中后data里面的数据自己改变 -->
+
+
+        <!-- <input type="checkbox" name="check1" value="zq" v-model="check1">足球
+        <input type="checkbox" name="check1" value="lq" v-model="check1">篮球
+        <input type="checkbox" name="check1" value="ymq" v-model="check1">羽毛球
+        <input type="checkbox" name="check1" value="ppq" v-model="check1">乒乓球
+        <input type="radio" name="sex" value="男" v-model="sex1">男
+        <input type="radio" name="sex" value="女" v-model="sex1">女 -->
+        <!-- 单选框 复选框 name一样是一组，然后每个标签都要关联 v-model 复选框标签要 关联一个数组 单选框关联一个字符串 当你选中的时候就自己帮你改变里面的值 -->
+    </div>
 
     <script>
-        new Vue({
-            el:"#app",
-            data:{
-                
+        let a = new Vue({
+            el: "#app",
+            data: {
+                val1: '111',
+                sel1:"林大",
+                check1:[],
+                sex1:""
             }
         })
     </script>
