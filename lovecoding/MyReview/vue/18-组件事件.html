@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <mytest></mytest>
+    </div>
+    <template id="temp1">
+        <div>
+            <h1>{{ num }}</h1>
+            <button @click="addhandle">add</button>
+        </div>
+    </template>
+
+
+    <script>
+
+        new Vue({
+            el: "#app",
+            data: {
+                num: 1
+            },
+            components: {
+                mytest: {
+                    template: "#temp1",
+                    data() {
+                        return {
+                            num: 10
+                        }
+                    },
+                    methods:{
+                        addhandle(){
+                            ++this.num;
+                        }
+                    }
+                }
+            }
+        })
+
+        // 就像是在 之前一样 在methods 里面写函数 通过事件去触发
+    </script>
+</body>
+
+</html>

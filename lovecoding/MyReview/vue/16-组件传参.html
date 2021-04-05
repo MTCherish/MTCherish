@@ -8,11 +8,11 @@
 </head>
 <body>
     <div id="app">
-        <mytest v-bind:username="uname"></mytest>
+        <mytest :username="uname"></mytest>
     </div>
     <template id="tem1">
         <div>
-            <h1>你好:{{username}}</h1>
+            <h1>你好:{{ username }}</h1>
         </div>
     </template>
     
@@ -22,16 +22,18 @@
             el:"#app",
             data:{
                 num:1,
-                uname:"小刚1"
+                uname:'小刚'
+              
             },
-            components:{
-                mytest:{
-                    props:['username'],
-                    template:"#tem1"
-                }
-            }
+           components:{
+               mytest:{
+                   props:['username'],
+                   template:"#tem1"
+               }
+           }
         })
         
+        // 组件传参 父子组件 父亲向孩子传参 用 props
     </script>
 </body>
 </html>
