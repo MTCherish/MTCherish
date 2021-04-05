@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{ num }}
+        <mytext></mytext>
+    </div>
+    <script>
+
+        new Vue({
+            el: "#app",
+            data: {
+                num: 1
+            },
+            components: {
+                mytext: {
+                    template: `
+                        <div>
+                            <h1> hello  world  </h1>    
+                        </div>
+                    `
+                }
+
+                //  局部组件就是把 全局的拿进 vue 实例化对象里面 
+            }
+        })
+
+    </script>
+</body>
+
+</html>

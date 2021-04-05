@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-pre>{{ str }}</div> <!-- 纯净模式 就是 后面是啥就是啥 不会去关联到 data 里面的数据 -->
+        <div v-cloak>...</div>     <!-- 类似于监工 当 开始渲染的时候在这里 等渲染完成就自动删除这个 -->
+        <div v-once>{{num}}</div>  <!-- 数据只是会渲染一次 就是这个标签下的东西 只会加载一次 以后也不会变 -->
+        <button @click="addHandle">add</button>
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                str:'hello',
+                num:0
+            },
+            methods:{
+                addHandle(){
+                    ++this.num;
+                } 
+            }
+        })
+    </script>
+</body>
+</html>

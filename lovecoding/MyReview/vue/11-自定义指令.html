@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app" v-color="mycolor">hello</div>
+    <script>
+        Vue.directive("color",{
+            inserted(el,binding,vnode){
+                console.log(el,binding,vnode);
+
+                // el 是这个指令的标签是哪一个
+                // binging 是指令的东西 像指令名称 值 之类的
+                // vnode 是一个虚拟的dom 不是操作真实的dom  是把文档变成一个暴大的字符串
+                el.style.color = binding.value
+            }
+        })
+        new Vue({
+            el:"#app",
+            data:{
+                mycolor:"blue"
+            }
+        })
+    </script>
+</body>
+</html>

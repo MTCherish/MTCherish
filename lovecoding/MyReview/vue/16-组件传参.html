@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <mytest v-bind:username="uname"></mytest>
+    </div>
+    <template id="tem1">
+        <div>
+            <h1>你好:{{username}}</h1>
+        </div>
+    </template>
+    
+    <script>
+        
+        new Vue({
+            el:"#app",
+            data:{
+                num:1,
+                uname:"小刚1"
+            },
+            components:{
+                mytest:{
+                    props:['username'],
+                    template:"#tem1"
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

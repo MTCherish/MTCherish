@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app" >
+        <ul>
+            <li v-for="val in arr">{{val}}</li>
+        </ul>
+        <button @click="changeHandle1">change</button>
+
+
+        <div> {{obj.username}} -- {{obj.age}} -- {{obj.school}} -- {{obj.sex}} </div>
+        <button @click="changeHandle2">change2</button>
+    </div>
+    <script>
+        
+        new Vue({
+            el:"#app",
+            data:{
+                arr:[1,2,3],
+                obj:{
+                    username:"小明",
+                    age:18,
+                    school:"黑大"
+                }
+            },
+            methods: {
+                changeHandle1(){
+                    // this.arr[0] = "a";
+                    // console.log(this.arr);
+                    // 在数组中 修改里面特定的值是不好使的 要用set
+
+                    // this.arr.push('abc')
+                    // 虽然修改不好使但是 添加和删除是好使的
+
+                    // let newArr = [...this.arr];
+                    // newArr[0] = "a";
+                    // this.arr = newArr;
+                    // 可以 用重现赋值一个新数组的方式去解决
+
+                    Vue.set(this.arr,0,'a');
+                    // 用一个set函数 第一个是要修改的数组  第二个是要修改的某一个值 第三个是改成什么
+                },
+                changeHandle2(){
+                    // this.obj.school="男";
+                    Vue.set(this.obj,'sex','男')
+
+                    // 在对象中 添加是不好使的 但是修改是好使的  添加同上
+                }
+            },
+        })
+    </script>
+</body>
+</html>

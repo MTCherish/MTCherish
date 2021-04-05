@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{ num }}
+        <mytext></mytext>
+    </div>
+    <div id="app2">
+        {{num}}
+        <mytest></mytest>
+    </div>
+    <script>
+
+        Vue.component("mytext",{
+            template:"<h1>hello world </h1>"
+        })
+        //  可以通过 Vue.component 去定义组件  
+        new Vue({
+            el:"#app",
+            data:{
+                num:1
+            }
+        })
+        new Vue({
+            el:"#app2",
+            data:{
+                num:3
+            }
+        })
+    </script>
+</body>
+</html>

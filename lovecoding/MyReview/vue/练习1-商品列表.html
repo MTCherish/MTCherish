@@ -22,6 +22,12 @@
         .container {
             padding: 50px 0;
         }
+        .active{
+           background-color: #ddd;
+        }
+        [v-cloak]{
+            display: none;
+        }
     </style>
 </head>
 
@@ -60,7 +66,7 @@
             </div>
         </form>
         <div>
-            <table class="table">
+            <table class="table" v-cloak>
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">#</th>
@@ -69,21 +75,19 @@
                         <th scope="col">操作</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr v-for="(item) in datalist" :class="{active:{{item.ischecked}}}">
+                <tbody >
+                    <tr v-bind:class="{active:item.ischecked}" v-for="(item) in datalist"  @click="item.ischecked = !item.ischecked">
 
-                        <td><input type="checkbox" :checked="{{item.ischecked}}"></td>
+                        <td><input type="checkbox" :checked="item.ischecked"></td>
                         <td>{{ item.title }}</td>
                         <td>{{ item.price }}</td>
-                        <td><button type="button" @click="delHandel(item.id)" class="btn btn-primary btn-sm">删除</button>
+                        <td><button type="button" @click.stop="delHandel(item.id)" class="btn btn-primary btn-sm">删除</button>
                         </td>
                     </tr>
                     <tr>
-
                         <td colspan="2">总价</td>
-
                         <td>0</td>
-                        <td><button type="button" class="btn btn-primary btn-sm">删除选中</button></td>
+                        <td><button type="button" @click="delAllHandel" class="btn btn-primary btn-sm">删除选中</button></td>
                     </tr>
 
                 </tbody>
@@ -153,6 +157,14 @@
                         this.goodsprice = "";
                     }
 
+                },
+                delAllHandel(){
+                    let arr = this.datalist.filter((item)=>{
+                        if(!item.ischecked){
+                            return item;
+                        }
+                    })
+                    this.datalist = arr
                 }
             }
         })
