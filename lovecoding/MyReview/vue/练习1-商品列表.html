@@ -86,7 +86,7 @@
                     </tr>
                     <tr>
                         <td colspan="2">总价</td>
-                        <td>0</td>
+                        <td>{{ sum }}</td>
                         <td><button type="button" @click="delAllHandel" class="btn btn-primary btn-sm">删除选中</button></td>
                     </tr>
 
@@ -124,6 +124,18 @@
                         ischecked:false
                     }
                 ]
+            },
+            computed:{
+                sum(){
+                    let sum = 0;
+                    this.datalist.map((item)=>{
+                        if(item.ischecked){
+                            sum += item.price;
+                        }
+                    })
+                    return sum
+                }
+
             },
             methods: {
                 searchHandle() {

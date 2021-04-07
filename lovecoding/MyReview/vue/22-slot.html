@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <mytest>
+            <div slot="slot1">hello</div>
+            <div slot="slot2">世界</div>
+        </mytest>
+    </div>
+    <template id="tem1">
+        <div>
+            <slot name="slot2"></slot>
+            <slot name="slot1"></slot>
+            <h1>你好</h1>
+           
+        </div>
+    </template>
+    
+    <!-- 插槽 slot 可以把想要加入的内容 在模板中声明一下 插入 就可以显示 -->
+    <script>
+        
+        new Vue({
+            el:"#app",
+            data:{
+            },
+            components:{
+                mytest:{
+                    template:"#tem1"
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

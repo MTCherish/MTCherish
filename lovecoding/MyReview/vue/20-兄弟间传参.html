@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <mytest :numi="num"></mytest>
+        <mytest2 @addmy2="addnum"></mytest2>
+    </div>
+    <template id="temp1">
+        <div>
+            {{numi}}
+        </div>
+    </template>
+    <template id="temp2">
+        <div>
+            <button @click="addhandel">add</button>
+        </div>
+    </template>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                num:0
+            },
+            methods:{
+                addnum(i){
+                    this.num += i;
+                }
+            },
+            components:{
+                mytest:{
+                    template:"#temp1",
+                    props:["numi"]
+                },
+                mytest2:{
+                    template:"#temp2",
+                    methods:{
+                        addhandel(){
+                            this.$emit("addmy2",10)
+                        }
+                    }
+                }
+            }
+        })
+
+        // 兄弟间传参 要通过先传给父组件 然后 父组件再传给子组件
+    </script>
+</body>
+</html>

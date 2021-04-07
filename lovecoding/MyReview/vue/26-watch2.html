@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+       <h1>{{obj.a}}</h1> 
+       <h1>{{obj.b}}</h1>
+        <button @click="changeHandle">change</button>
+    </div>
+    
+    <script>
+        let app = new Vue({
+            el:"#app",
+            data:{
+                obj:{
+                    a:1,
+                    b:2
+                }
+            },
+            watch:{
+                // obj(){
+                //     console.log("com");
+                // }
+                // 'obj.a':function(){
+                //     console.log("com");
+                // }
+                obj:{
+                    deep:true,
+                    handler(){
+                        console.log("com");
+                    }
+                }
+
+            },
+            methods: {
+                changeHandle(){
+                    this.obj.b = "hello"
+                }
+                
+            },
+        })
+        
+    </script>
+</body>
+</html>

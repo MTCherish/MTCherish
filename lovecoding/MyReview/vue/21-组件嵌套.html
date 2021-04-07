@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <com1>
+        </com1>
+    </div>
+    <template id="tem1">
+        <div>
+            <com2></com2>
+            <h1>子组件1</h1>
+        </div>
+    </template>
+    <template id="tem2">
+        <div>
+            <h1>子组件2</h1>
+        </div>
+    </template>
+
+    <script>
+
+        new Vue({
+            el: "#app",
+            data: {
+            },
+            components: {
+                com1: {
+                    template: "#tem1",
+                    components: {
+                        com2: {
+                            template: "#tem2"
+                        }
+                    }
+                },
+
+            }
+        })
+
+        // 组件嵌套 在一个组件中 用另一个组件 必须在定义的时候要在 这个组件内部去定义另一个组件 不然会报错
+    </script>
+</body>
+
+</html>
