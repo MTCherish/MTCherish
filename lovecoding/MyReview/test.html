@@ -97,8 +97,71 @@
 
     </script>-->
 
-   
-   
+    <!-- <script>
+      console.log('script start');
+new Promise((resolve, reject) =>{
+    console.log('p 1 resolve');
+    resolve();
+}).then(() => {
+    console.log('p 1');
+});
+setTimeout(() => {
+    console.log('setTimeout');
+}, 0);
+var s = new Date();
+while(new Date() - s < 50); // 阻塞50ms
+Promise.resolve().then(() => {
+    console.log('p 2');
+});
+console.log('script ent');  
+    </script> -->
+
+    <!-- <script>
+
+        var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        let cnt = 0;
+        arr.sort(function () {
+            cnt++;
+            var a = Math.random() - 0.5;
+            // console.log(a);
+            return a;
+        })
+        //  console.log(arr);
+        console.log(cnt);
+    </script> -->
+
+    <!-- <script>
+
+         Function.prototype.myCall = function(context,...arg){
+            context.fn = this;   //这里的this  是指foo那个函数体
+            var res = context.fn(...arg);
+            delete context.fn;
+            return res;
+        }
+        Function.prototype.myBind = function(context,...arg){
+            var that = this
+            return function(){
+
+               // console.log(this);   //如果在这里面 这个this  是windows
+                that.apply(context,arg)
+            }
+        }
+        var a = 20;
+        var obj = {
+            a:"hello",
+            // fn:function(){
+            //     console.log(this.a)
+            // }  这个东西就是相当于是 自己写 call 的时候 就给对象加了个这个 然后又删除了
+        }
+        function foo(arg1,arg2){
+            console.log(this.a,arg1,arg2);
+            return "hello world"
+        }
+        // var str = foo.myCall(obj,"aa","bb")//hello
+        // console.log(str);
+        let foo2 = foo.myBind(obj,"aa","bb");
+        foo2()//hello
+    </script> -->
 </body>
 
 </html>
