@@ -40,7 +40,13 @@ const routes = [
   {
     path: '/pagetwo',
     name: 'PageTwo',
-    component: () => import('../views/Page2.vue')
+    component: () => import('../views/Page2.vue'),
+    // 路由守卫 路由跳转的时候进行验证
+    beforeEnter:(to,from ,next) =>{
+      console.log(to,from,next);
+      //to 就是去哪里  from 就是来自哪里
+      next();
+    }
   },
   {
     path: '/pagethree/:username',

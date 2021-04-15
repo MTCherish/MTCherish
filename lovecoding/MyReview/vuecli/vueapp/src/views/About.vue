@@ -7,3 +7,19 @@
   </div>
   
 </template>
+
+
+<script>
+export default {
+
+  // 可以在组件里面写路由守卫 跟在index 写是一样的
+  beforeRouteEnter(to,from,next){
+    console.log(to,from,next);
+    next()
+  },
+  beforeRouteLeave(to,from,next){
+    console.log(to,from,next);
+      next()
+  }
+}
+</script>

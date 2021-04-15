@@ -16,5 +16,6 @@ export default {
     created(){
         console.log(this.$route.query.username);
     }
+    
 }
 </script>

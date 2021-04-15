@@ -162,6 +162,26 @@ console.log('script ent');
         let foo2 = foo.myBind(obj,"aa","bb");
         foo2()//hello
     </script> -->
+    <script>
+
+
+        class A {
+            constructor(){
+            }
+        }
+        class B extends A {
+            constructor(){
+                super()
+            }
+        }
+        
+        let a = new A();
+        let b = new B();
+        console.log(a.__proto__);
+        console.log(b.__proto__);
+        console.log(A.prototype);
+        console.log(B.prototype);
+    </script>
 </body>
 
 </html>
