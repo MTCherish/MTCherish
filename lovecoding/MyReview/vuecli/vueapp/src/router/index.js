@@ -57,6 +57,20 @@ const routes = [
     path:'/redirect/:username',
     redirect:'/pagethree/:username'
   },{
+    path:"/pagefour",
+    name:"PageFour",
+    component: () => import('../views/Page4.vue')
+  },
+  {
+    path:"/pagefive",
+    name:"PageFive",
+    component: () => import('../views/Page5.vue')
+  },
+  {
+    path:"/tvdetail/:id",
+    name:"Detail",
+    component: () => import('../views/tvdetail.vue')
+  },{
     path:'*',
     component: () => import("../views/Error.vue")
   }

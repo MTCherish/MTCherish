@@ -162,7 +162,7 @@ console.log('script ent');
         let foo2 = foo.myBind(obj,"aa","bb");
         foo2()//hello
     </script> -->
-    <script>
+    <!-- <script>
 
 
         class A {
@@ -181,7 +181,45 @@ console.log('script ent');
         console.log(b.__proto__);
         console.log(A.prototype);
         console.log(B.prototype);
+    </script> -->
+
+    <script>
+
+        //  function getData(){
+        //             return new Promise(function(resolve,reject){
+        //                 setTimeout(function(){
+        //                     resolve("success")
+        //                     console.log("success");
+        //                 },1000)
+        //             })
+        //         }
+
+        //         async function foo(){
+        //             await getData()
+        //             console.log("1");
+        //         }
+        //         foo()
+
+
+        function foo(p, num) {
+            var str = ""
+            for(var i = 1;i<=num;i++) {
+                if (num % 2 == 0) {
+                    if(str==""){
+                        str = p;
+                    }
+                    str += str;
+                    num = num / 2;
+                } else {
+                    str += p;   
+                }
+            }
+            return str;
+        }
+       
+        console.log( foo("a",3));
     </script>
+
 </body>
 
 </html>
